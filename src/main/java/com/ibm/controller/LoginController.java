@@ -1,4 +1,4 @@
-package com.example;
+package com.ibm.controller;
 
 import java.io.IOException;
 import java.util.Set;
@@ -19,14 +19,13 @@ import com.ibm.user.UserDAO;
 // This class define the RESTful API to fetch the database service information
 // <basepath>/api/hello
 
-@Path("/test")
-public class TestResource {
+@Path("/validateLogin")
+public class LoginController {
 
 	@POST
 	@Produces("application/json")
 	@Consumes("application/json")
 	public String getInformation(String input) throws Exception, IOException {
-        //JSONObject myJSONObj = new JSONObject();
 		String result = new String();
 		System.out.println("Snehal : " + input);
         JSONObject json = new JSONObject().parse(input);

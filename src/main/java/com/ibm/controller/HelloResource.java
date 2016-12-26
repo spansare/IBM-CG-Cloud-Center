@@ -1,4 +1,4 @@
-package com.example;
+package com.ibm.controller;
 
 import java.io.IOException;
 import java.util.Set;
