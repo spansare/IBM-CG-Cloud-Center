@@ -21,7 +21,7 @@ import com.ibm.json.java.JSONArray;
 @Path("/getCategories")
 public class CategoryController {
 
-	@POST
+	@GET
 	@Produces("application/json")
 	public String getInformation() throws Exception, IOException {
 		String result = new String();

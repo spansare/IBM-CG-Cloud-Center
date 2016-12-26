@@ -42,6 +42,7 @@ public class CategoryDAO {
 	        if (preparedStatement != null) {
 	        	try {
 					preparedStatement.close();
+					connection.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
