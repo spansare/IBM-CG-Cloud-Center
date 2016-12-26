@@ -34,6 +34,7 @@ public class CategoryDAO {
             	category.setLong_description(rs.getString("long_description"));
             	category.setShort_description(rs.getString("short_description"));
             	categoryList.add(category);
+            	System.out.println("Snehal : " + rs.getString("category_name"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
