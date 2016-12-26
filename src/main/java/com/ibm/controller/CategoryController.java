@@ -10,9 +10,11 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+
 import com.ibm.category.Category;
 import com.ibm.category.CategoryDAO;
 import com.ibm.json.java.JSONArray;
+import com.ibm.json.java.JSONObject;
 
 
 // This class define the RESTful API to fetch the database service information
@@ -28,8 +30,9 @@ public class CategoryController {
 		CategoryDAO catDao = new CategoryDAO();
 		List<Category> categories = catDao.getAllCategories();
 		JSONArray jsonArr = new JSONArray();
-		jsonArr.addAll(categories);
-		result = jsonArr.serialize();
+		org.json.JSONArray json = new org.json.JSONArray();
+		json = json.put(categories);
+		result = json.toString();
 		System.out.println("Snehal : " + result);
         return result;
         
