@@ -27,7 +27,7 @@ public class CategoryDAO {
             preparedStatement = (PreparedStatement) connection.prepareStatement("select * from "+tableName);
             ResultSet rs = (ResultSet) preparedStatement.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
             	Category category = new Category();
             	category.setCategory_name(rs.getString("category_name"));
             	category.setImage_url(rs.getString("image_url"));
