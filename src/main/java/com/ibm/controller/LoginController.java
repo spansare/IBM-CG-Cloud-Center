@@ -35,12 +35,12 @@ public class LoginController {
 		if (user != null)
 		{
 			if (user.getPassword().equals(json.get("password")))
-				result = "Login successful";
+				result = "Success";
 		}
 		else
-			result = "Invalid Credentials";
+			result = "Error";
         //myJSONObj.put("message", "Hello India!");
-        return result;
+        return new JSONObject().parse(result).serialize();
         
 	}
 }
