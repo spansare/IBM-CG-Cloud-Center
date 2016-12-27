@@ -1,34 +1,194 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>Java REST Application</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport"
-	content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<link rel="stylesheet" href="style.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</head>
-<script>
-$(document).ready(function() {
-	console.log("Ready!");
-	$.get( "api/hello", function(data) {
-		console.log("good", data.message);
-  		$('#messageText').text(data.message);
-	}) 
-	.fail(function(err) {
-   	alert( "ERROR calling API" );
-  })
-	
+	<head>
 
-});
-</script>
-<body>
-	<br>
-	<h1>
-		<b>Message from <a href="api/hello">/api/hello</a></b> : 
-		<span id="messageText"></span>
-	</h1>
+        <title>IBM CG Cloud Center</title>
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Webfont -->
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,700,900" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.woff" rel="stylesheet" type="text/css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf" rel="stylesheet" type="text/css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">     
+        <link rel="stylesheet" href="css/style.css">
+		
+		<!-- Javascript -->
+        		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jssor-slider/21.1.5/jssor.slider.mini.js"></script>
+        <script src="js/main.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-cookies.min.js"></script>
+
+    </head>
+	<body class="">
+        <!-- PRELOADER -->
+        <div id="loader" style="display: none;"></div>
+        <!-- HEADER -->
+        <nav class="navbar navbar-fixed-top">
+            <div style="background-color: yellow;height:50px;width:100%;">
+                <div class="tb_left pull-left">
+                	Image Place Holder
+				</div>
+				<div class="tb_center pull-left">
+					Center Header Text
+				</div>
+				<div class="tb_right pull-right" style="padding-left:10px;padding-top:10px;">
+					<button id="loginBtn" class="btn btn-primary" data-popup-open="popup-1">Login</button>
+				</div>
+            </div>
+        </nav>
+		
+        <div class="body" style="padding-top: 50px;">
+
+            <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 600px; overflow: hidden;">
+            
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url(images/loading.gif) no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+            </div>
+            
+            <!-- Slides Container -->
+            <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 600px; overflow: hidden;">
+                <div>
+                    <img u="image" src2="images/red.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="images/purple.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="images/blue.jpg" />
+                </div>
+            </div>
+            
+            <!--#region Bullet Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
+            <style>
+                /* jssor slider bullet navigator skin 21 css */
+                
+                .jssorb21 {
+                    position: absolute;
+                }
+                .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 19px;
+                    height: 19px;
+                    text-align: center;
+                    line-height: 19px;
+                    color: white;
+                    font-size: 12px;
+                    background: url(images/b21.png) no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .jssorb21 div { background-position: -5px -5px; }
+                .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+                .jssorb21 .av { background-position: -65px -5px; }
+                .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+            </style>
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb21" style="bottom: 26px; right: 6px;">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype"></div>
+            </div>
+            
+            <style>
+                /* jssor slider arrow navigator skin 21 css */
+                
+                .jssora21l, .jssora21r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 55px;
+                    cursor: pointer;
+                    background: url(images/a21.png) center center no-repeat;
+                    overflow: hidden;
+                }
+                .jssora21l { background-position: -3px -33px; }
+                .jssora21r { background-position: -63px -33px; }
+                .jssora21l:hover { background-position: -123px -33px; }
+                .jssora21r:hover { background-position: -183px -33px; }
+                .jssora21l.jssora21ldn { background-position: -243px -33px; }
+                .jssora21r.jssora21rdn { background-position: -303px -33px; }
+            </style>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
+            </span>
+            <!--#endregion Arrow Navigator Skin End -->
+            <a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+        </div>
+
+            <!-- BLOCKS WRAP -->
+            <div class="block-main container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3">
+                        <div class="block-content" >
+                            <img src="images/blocks/1.jpg" class="img-responsive" alt=""/>
+                            <div class="bs-text-down text-center hvr-outline-out">
+                                Menswear<span>Intimates Fall/Winter 2015</span>				
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3">
+                        <div class="block-content">
+                            <img src="images/blocks/2.jpg" class="img-responsive" alt=""/>
+                            <div class="bs-text-down text-center">
+                                Accesories<span>Get a new look with Smile Collection</span>				
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3">
+                        <div class="block-content">
+                            <img src="images/blocks/3.jpg" class="img-responsive" alt=""/>
+                            <div class="bs-text-down text-center">
+                                Womenswear<span>Smile Collection new arrivals</span>				
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="space30 clearfix"></div>                        
+
+            <!-- FOOTER COPYRIGHT -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7">
+                            <ul class="flinks">
+                                <li><a href="./index.html">Site Map</a></li>
+                                <li><a href="./index.html">Search Terms</a></li>
+                            </ul>
+                            <br>
+                            <p>Copyright 2017 · Designed &amp; Developed by <a href="#">jThemes Studio.</a> All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>            	
+
+        </div>
+
+        <div id="backtotop" class=""><i class="fa fa-chevron-up"></i></div>		
+
 </body>
 </html>
