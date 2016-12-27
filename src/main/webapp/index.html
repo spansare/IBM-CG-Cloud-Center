@@ -141,27 +141,11 @@
             <!-- BLOCKS WRAP -->
             <div class="block-main container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-3">
+                    <div class="col-md-4 col-sm-3" ng-repeat="category in categoryList">
                         <div class="block-content" >
                             <img src="images/blocks/1.jpg" class="img-responsive" alt=""/>
                             <div class="bs-text-down text-center hvr-outline-out">
-                                {{categoryList[0].category_name}}<span>{{categoryList[0].short_description}}</span>				
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-3">
-                        <div class="block-content">
-                            <img src="images/blocks/2.jpg" class="img-responsive" alt=""/>
-                            <div class="bs-text-down text-center">
-                                Accesories<span>Get a new look with Smile Collection</span>				
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-3">
-                        <div class="block-content">
-                            <img src="images/blocks/3.jpg" class="img-responsive" alt=""/>
-                            <div class="bs-text-down text-center">
-                                Womenswear<span>Smile Collection new arrivals</span>				
+                                {{category.category_name}}<span>{{category.short_description}}</span>				
                             </div>
                         </div>
                     </div>
