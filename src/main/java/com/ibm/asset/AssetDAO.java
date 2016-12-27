@@ -21,12 +21,12 @@ public class AssetDAO {
 	
 	public List<Asset> getAssetsByCategory(String category) {
 		List<Asset> assetList = new ArrayList<Asset>();
-		
+		System.out.println("Snehal : " + category);
 		try {
             preparedStatement = (PreparedStatement) connection.prepareStatement("select * from " + tableName + " where category=?");
             preparedStatement.setString(1, category);
             ResultSet rs = (ResultSet) preparedStatement.executeQuery();
-
+            
             while (rs.next()) {
             	Asset asset = new Asset();
             	asset.setAsset_title(rs.getString("asset_title"));
