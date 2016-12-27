@@ -5,7 +5,7 @@ dashboardApp.controller('categoryController', function($scope, $http) {
 	
 	$http({
 		method : 'GET',
-		url : 'api/hello'
+		url : 'api/CategoryService/getCategories'
 	}).success(function(data, status, headers, config) {
 		$scope.person = data;
 	}).error(function(data, status, headers, config) {
