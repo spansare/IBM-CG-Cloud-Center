@@ -25,13 +25,17 @@
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jssor-slider/21.1.5/jssor.slider.mini.js"></script>
-        <script src="js/main.js"></script>
+        
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-cookies.min.js"></script>
+    	
+    	<script src="js/main.js"></script>
+    	<script src="app/dashboardApp.js"></script>
+    	<script src="controller/categoryController.js"></script>
 
     </head>
-	<body class="">
+	<body class="" ng-app="dashboardApp" ng-controller="categoryController">
         <!-- PRELOADER -->
         <div id="loader" style="display: none;"></div>
         <!-- HEADER -->
