@@ -35,10 +35,10 @@ public class LoginController {
 		if (user != null)
 		{
 			if (user.getPassword().equals(json.get("password")))
-				result = "{\"result\":\"Success\"}";
+				result = "{\"result\":true}";
 		}
 		else
-			result = "Error";
+			result = "{\"result\":true}";
         //myJSONObj.put("message", "Hello India!");
         return result;
         

@@ -1,4 +1,4 @@
-dashboardApp.controller('categoryController', function($scope, $http) {
+dashboardApp.controller('categoryController', function($scope, $http, $location) {
    
 	
 	$http({
@@ -23,7 +23,11 @@ dashboardApp.controller('categoryController', function($scope, $http) {
 					url : 'api/UserService/validateLogin',
 					data : jsonData
 				}).success(function(data, status, headers, config) {
-					$scope.loginResult = data;
+					$scope.loginResult = data.result;
+					if($scope.loginResult) {
+						$location.path('/');
+					}
+					
 				}).error(function(data, status, headers, config) {
 					// called asynchronously if an error occurs
 					// or server returns response with an error status.
