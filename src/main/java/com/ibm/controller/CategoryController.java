@@ -18,10 +18,11 @@ import com.ibm.category.CategoryDAO;
 // This class define the RESTful API to fetch the database service information
 // <basepath>/api/hello
 
-@Path("/getCategories")
+@Path("/CategoryService")
 public class CategoryController {
 
 	@GET
+	@Path("/getCategories")
 	@Produces("application/json")
 	public String getInformation() throws Exception, IOException {
 		String result = new String();
@@ -30,7 +31,7 @@ public class CategoryController {
 		List<Category> categories = catDao.getAllCategories();
 		categoryJson = categoryJson.put("result", categories);
 		result = categoryJson.toString();
-		System.out.println("Snehal : " + result);
+		System.out.println("Result : " + result);
         return result;
         
 	}
