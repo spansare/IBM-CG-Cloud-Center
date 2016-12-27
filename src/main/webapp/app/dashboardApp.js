@@ -1,1 +1,1 @@
-var dashboardApp = angular.module("dashboardApp", []);
+var dashboardApp = angular.module('dashboardApp', []);
