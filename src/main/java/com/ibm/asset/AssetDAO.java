@@ -55,4 +55,36 @@ public class AssetDAO {
 		
 		return assetList;
 	}
+	
+	public boolean createAsset(Asset asset) {
+		boolean result = false;
+		
+		try {
+			preparedStatement = (PreparedStatement) connection.prepareStatement("insert into " + tableName + "(asset_title, category, short_description, long_description, image_url, document_url, demo_url) values(?,?,?,?,?,?,?)");
+			preparedStatement.setString(1, asset.getAsset_title());
+			preparedStatement.setString(2, asset.getCategory());
+			preparedStatement.setString(3, asset.getShort_description());
+			preparedStatement.setString(4, asset.getLong_description());
+			preparedStatement.setString(5, asset.getImage_url());
+			preparedStatement.setString(6, asset.getDocument_url());
+			preparedStatement.setString(7, asset.getDemo_url());
+			preparedStatement.executeUpdate();			
+			result = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result = false;
+		} finally {
+	        if (preparedStatement != null) {
+	        	try {
+					preparedStatement.close();
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	        }
+	    }
+		
+		return result;
+	}
 }

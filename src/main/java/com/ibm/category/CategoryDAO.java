@@ -52,4 +52,33 @@ public class CategoryDAO {
 		return categoryList;
 		
 	}
+	
+	public boolean createCategory(Category category) {
+		boolean result = false;
+		
+		try {
+			preparedStatement = (PreparedStatement) connection.prepareStatement("insert into " + tableName + "(category_name, short_description, long_description, image_url) values(?,?,?,?)");
+			preparedStatement.setString(1, category.getCategory_name());
+			preparedStatement.setString(2, category.getShort_description());
+			preparedStatement.setString(3, category.getLong_description());
+			preparedStatement.setString(4, category.getImage_url());
+			preparedStatement.executeUpdate();			
+			result = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result = false;
+		} finally {
+	        if (preparedStatement != null) {
+	        	try {
+					preparedStatement.close();
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	        }
+	    }
+		
+		return result;
+	}
 }

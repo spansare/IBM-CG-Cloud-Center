@@ -19,10 +19,11 @@ import com.ibm.user.UserDAO;
 // This class define the RESTful API to fetch the database service information
 // <basepath>/api/hello
 
-@Path("/validateLogin")
+@Path("/UserService")
 public class LoginController {
 
 	@POST
+	@Path("/validateLogin")
 	@Produces("application/json")
 	@Consumes("application/json")
 	public String getInformation(String input) throws Exception, IOException {
