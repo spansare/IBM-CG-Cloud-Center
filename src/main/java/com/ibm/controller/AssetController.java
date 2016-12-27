@@ -18,7 +18,7 @@ public class AssetController {
 	
 	@GET
 	@Produces("application/json")
-	@Consumes("application/json")
+	@Consumes("application/text")
 	public String getInformation(String category) throws Exception, IOException {
 		String result = new String();
 		JSONObject assetJson = new JSONObject();
