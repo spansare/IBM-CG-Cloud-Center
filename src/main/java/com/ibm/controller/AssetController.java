@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -16,14 +17,16 @@ import com.ibm.asset.AssetDAO;
 @Path("/getAssets")
 public class AssetController {
 	
-	@GET
+	@POST
 	@Produces("application/json")
 	@Consumes("application/json")
-	public String getInformation(String category) throws Exception, IOException {
+	public String getInformation(String input) throws Exception, IOException {
 		String result = new String();
+		System.out.println("Input : " + input);
+		JSONObject json = new JSONObject(input);
 		JSONObject assetJson = new JSONObject();
 		AssetDAO assetDao = new AssetDAO();
-		List<Asset> assets = assetDao.getAssetsByCategory(category);
+		List<Asset> assets = assetDao.getAssetsByCategory(json.getString("category"));
 		assetJson = assetJson.put("result", assets);
 		result = assetJson.toString();
 		System.out.println("Snehal : " + result);
