@@ -1,0 +1,1 @@
+var assetApp = angular.module('assetApp', []);
