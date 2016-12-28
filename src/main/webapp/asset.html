@@ -1,141 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-		IBM - Capgemini Cloud Center
-	</title>
-	<meta http-equiv="Cache-Control" content="No-Cache" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
-	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link href="http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,700,900" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.woff" rel="stylesheet" type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf" rel="stylesheet" type="text/css">
-
-	<!-- CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<link rel="stylesheet" href="css/asset.css"> 
-	<link rel="stylesheet" href="css/style.css">     
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-        
-    <script src="js/main.js"></script>
-    <script src="app/assetApp.js"></script>
-    <script src="controller/assetController.js"></script>
-    	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-
-</head>
-<body ng-app="assetApp" ng-controller="assetController">
-	<nav class="navbar navbar-fixed-top">
-		<div style="background-color: yellow;height:8vh;width:100%;">
-			<div class="tb_left pull-left">
-				Image Place Holder
-			</div>
-			<div class="tb_center pull-left">
-				Center Header Text
-			</div>
-			<div class="tb_right pull-right" style="padding-left:10px;padding-top:10px;">
-				<button id="homeBtn" class="btn btn-primary" data-popup-open="popup-1">Home</button>
-			</div>
+<h3 class="top-head-h3">{{categoryName}}</h3>
+<div class="container12" ng-repeat="asset in assetList">
+	<div class="column10 prefix1">
+		<h3>{{asset.asset_title}}</h3>
+		<p></p>
+		<div class="screen-shots ng-scope" style="width: 100%;">
+			<img src={{asset.image_url}}> 
 		</div>
-	</nav>
-	
-    <h3 class="top-head-h3">{{categoryName}}</h3>
-    <div class="container12" ng-repeat="asset in assetList">
-        <div class="column10 prefix1">
-            <h3>{{asset.asset_title}}</h3>
-            <p></p>
-			<div class="screen-shots ng-scope" style="width: 100%;">
-				<img src={{asset.image_url}}> 
+		<section id="works-methods-" class="section section-3" lang="en">
+			<p></p>
+			<div class="works-and-methods-wrapper">
+				<div class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+					<div class="wm-title" style="transform: translate(0px, 0px);"><h5>Overview</h5></div>
+				</div>
+				<div class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+					<div class="wm-content" style="transform: translate(0px, 0px);">
+					<p>{{asset.short_description}}</p>
+					</div>
+				</div>
 			</div>
-            <section id="works-methods-" class="section section-3" lang="en">
-                <p></p>
-                <div class="works-and-methods-wrapper">
-	                <div class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
-	                	<div class="wm-title" style="transform: translate(0px, 0px);"><h5>Overview</h5></div>
-	                </div>
-	                <div class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
-		                <div class="wm-content" style="transform: translate(0px, 0px);">
-		                <p>{{asset.short_description}}</p>
-						</div>
+			<br>
+			<div class="works-and-methods-wrapper">
+				<div
+					class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+					<div class="wm-title" style="transform: translate(0px, 0px);">
+						<h5>Description</h5>
 					</div>
 				</div>
-				<br>
-				<div class="works-and-methods-wrapper">
-					<div
-						class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
-						<div class="wm-title" style="transform: translate(0px, 0px);">
-							<h5>Description</h5>
-						</div>
-					</div>
-					<div
-						class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
-						<div class="wm-content" style="transform: translate(0px, 0px);">
-							<p>{{asset.long_description}}</p>
-						</div>
+				<div
+					class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+					<div class="wm-content" style="transform: translate(0px, 0px);">
+						<p>{{asset.long_description}}</p>
 					</div>
 				</div>
-				<br>
-				<!-- <div class="works-and-methods-wrapper">
-					<div
-						class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
-						<div class="wm-title" style="transform: translate(0px, 0px);">
-							<h5>
-								Classic<br> Artistic<br> Expressions
-							</h5>
-						</div>
+			</div>
+			<br>
+			<!-- <div class="works-and-methods-wrapper">
+				<div
+					class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+					<div class="wm-title" style="transform: translate(0px, 0px);">
+						<h5>
+							Classic<br> Artistic<br> Expressions
+						</h5>
 					</div>
-					<div
-						class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
-						<div class="wm-content" style="transform: translate(0px, 0px);">
-							
-							<p>
-								The most recent addition to Rytter &amp; Rytter’s field of
-								expertise is interactive<br> arts in cyberspace.
-							</p>
-						</div>
-					</div>
-				</div> -->
-				<p></p>
-				<div class="details-btmLinks">
-					<a href={{asset.document_url}} target="_blank" class="ng-scope">Document</a>
-					<a href={{asset.demo_url}} target="_blank" class="ng-scope">Application</a>
 				</div>
-			</section>
+				<div
+					class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+					<div class="wm-content" style="transform: translate(0px, 0px);">
+						
+						<p>
+							The most recent addition to Rytter &amp; Rytter�s field of
+							expertise is interactive<br> arts in cyberspace.
+						</p>
+					</div>
+				</div>
+			</div> -->
+			<p></p>
+			<div class="details-btmLinks">
+				<a href={{asset.document_url}} target="_blank" class="ng-scope">Document</a>
+				<a href={{asset.demo_url}} target="_blank" class="ng-scope">Application</a>
+			</div>
+		</section>
 
-        </div>
-    </div>
-        
-    
-    <div class="footer-bottom" style="height:8vh;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-7">
-                    <ul class="flinks">
-                        <li><a href="./index.html">Site Map</a></li>
-                        <li><a href="./index.html">Search Terms</a></li>
-                    </ul>
-                    <br>
-                    <p>Copyright 2017 · Designed &amp; Developed by <a href="#">jThemes Studio.</a> All rights reserved</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-  
-    </body>
-</html>
+	</div>
+</div>
