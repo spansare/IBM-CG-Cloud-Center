@@ -11,4 +11,15 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		// or server returns response with an error status.
 	});
 	
+	function getAssets(categoryName) {
+		$http({
+			method : 'GET',
+			url : 'api/AssetService/getAssets'
+		}).success(function(data, status, headers, config) {
+			$scope.assetList = data.result;
+		}).error(function(data, status, headers, config) {
+			// called asynchronously if an error occurs
+			// or server returns response with an error status.
+		});
+	}
 });
