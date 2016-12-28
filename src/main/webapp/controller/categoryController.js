@@ -13,7 +13,8 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 	
 	$scope.getAssetsbyCategory = function(categoryName) {
 		console.log(categoryName);
-		$http({
+		$location.path('/asset.html');
+		/*$http({
 			method : 'POST',
 			url : 'api/AssetService/getAssets',
 			data : {
@@ -24,7 +25,7 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		}).error(function(data, status, headers, config) {
 			// called asynchronously if an error occurs
 			// or server returns response with an error status.
-		});
+		});*/
 	}
 	
 });
