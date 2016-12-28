@@ -86,9 +86,7 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
     		  	contentType: "application/json",
     	        dataType: "json",
     	         url:    'api/AssetService/getAssets',
-    	         data : {
-     				'category' : this.categoryName
-     				},
+    	         data : JSON.stringify({category : this.categoryName}),
     	         success: function(data) {
     	        	 this.assetList = data.result;
     	                  },
