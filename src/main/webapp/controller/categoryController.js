@@ -11,10 +11,10 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		// or server returns response with an error status.
 	});
 	
-	$scope.getAssets = function(categoryName) {
+	$scope.getAssetsbyCategory = function(categoryName) {
 		console.log(categoryName);
 		$http({
-			method : 'GET',
+			method : 'POST',
 			url : 'api/AssetService/getAssets',
 			data : {
 				'category' : categoryName
@@ -27,19 +27,4 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		});
 	}
 	
-	$scope.getAssetsbyCategory = function() {
-		console.log("Live Demo with Bluemix");
-		$http({
-			method : 'GET',
-			url : 'api/AssetService/getAssets',
-			data : {
-				'category' : "Live Demo with Bluemix"
-			}
-		}).success(function(data, status, headers, config) {
-			$scope.assetList = data.result;
-		}).error(function(data, status, headers, config) {
-			// called asynchronously if an error occurs
-			// or server returns response with an error status.
-		});
-	}
 });
