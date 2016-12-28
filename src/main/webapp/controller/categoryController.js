@@ -12,9 +12,13 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 	});
 	
 	function getAssets(categoryName) {
+		console.log(categoryName);
 		$http({
 			method : 'GET',
-			url : 'api/AssetService/getAssets'
+			url : 'api/AssetService/getAssets',
+			data : {
+				'category' : categoryName
+			}
 		}).success(function(data, status, headers, config) {
 			$scope.assetList = data.result;
 		}).error(function(data, status, headers, config) {
