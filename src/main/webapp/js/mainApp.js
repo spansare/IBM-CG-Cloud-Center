@@ -18,13 +18,13 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 	}]);
 
 
-mainApp.controller('categoryController', ['$rootScope', '$scope', 'assetService', function ($rootScope, $scope, $http, assetService) {
+mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', 'assetService', function ($rootScope, $scope, $http, assetService) {
 
 	$scope.assetService = assetService;   
    
 	$http({
 		method : 'GET',
-	url : 'api/CategoryService/getCategories'
+		url : 'api/CategoryService/getCategories'
 	}).success(function(data, status, headers, config) {
 		$scope.categoryList = data.result;
 	}).error(function(data, status, headers, config) {
