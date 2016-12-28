@@ -3,6 +3,7 @@ package com.ibm.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
@@ -28,39 +29,53 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String result = new String();
 		
-		StringBuilder sb = new StringBuilder();
-        BufferedReader br = request.getReader();
-        String str = null;
-        
-        while ((str = br.readLine()) != null) {
-            sb.append(str);
-        }
+		
+		String userName = request.getParameter("username");
+		String password = request.getParameter("password");
+//		String result = new String();
+		
+//		StringBuilder sb = new StringBuilder();
+//        BufferedReader br = request.getReader();
+//        String str = null;
+//        
+//        while ((str = br.readLine()) != null) {
+//            sb.append(str);
+//        }
         
 		try {
-			JSONObject jObj = new JSONObject(sb.toString());
+			//JSONObject jObj = new JSONObject(sb.toString());
 			
-			System.out.println("Snehal : " + jObj.toString());
+			//System.out.println("Snehal : " + jObj.toString());
+			
+			System.out.println("Username:"+userName);
+			System.out.println("password:"+password);
 			
 			UserDAO userDao = new UserDAO();
-			User user = userDao.getUser((String) jObj.get("username"));
+			User user = userDao.getUser(userName);
 			if (user != null)
 			{
-				if (user.getPassword().equals(jObj.get("password"))) {
-					result = "{\"result\":true}";
+				if (user.getPassword().equals(password)) {
+//					result = "{\"result\":true}";
 					HttpSession session = request.getSession();
 					session.setAttribute("username", user.getUsername());
 					
+					response.setContentType("text/html"); 
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.html");
 			        dispatcher.forward(request, response); 
 				}
-					
 			}
 			else {
-				result = "{\"result\":false}";
+				response.setContentType("text/html"); 
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/index.html");
+		        dispatcher.forward(request, response);
+		        
+//				response.setContentType("text/html");
+//				PrintWriter out = response.getWriter();
+//				result = "{\"result\":false}";
+//				out.write(result);
 			}
-		} catch (JSONException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

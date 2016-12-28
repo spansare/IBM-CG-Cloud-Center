@@ -156,7 +156,7 @@
 			</div>
 			<div class="login" style="height:92vh;">
 				<div class="login-form">
-					<form ng-submit="user.validateLogin()"  id="ctl00">
+					<form method="post" action="loginServlet"  id="ctl00">
 						<h2>Login</h2>
 						<div class="bg-danger text-danger FailureCont">
 						</div>
@@ -164,17 +164,17 @@
 							<span id="BodyContent_LoginCtrl_UserNameRequired" title="Username is required." class="bg-danger text-danger block" style="visibility:hidden;">Username is required.</span>
 							<div class="input-group login-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<input name="ctl00$BodyContent$LoginCtrl$UserName" type="text" id="BodyContent_LoginCtrl_UserName" ng-model="user.username" tabindex="1" class="form-control" placeholder="Username" autocomplete="off" data-validate="placeholder required" />
+								<input name="username" type="text" id="username" ng-model="user.username" tabindex="1" class="form-control" placeholder="Username" autocomplete="off" data-validate="placeholder required" />
 							</div>
 						</div>
 						<div class="form-group">
 							<span id="BodyContent_LoginCtrl_PasswordRequired" title="Password is required." class="bg-danger text-danger block" style="visibility:hidden;">Password is required.</span>
 							<div class="input-group login-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-								<input name="ctl00$BodyContent$LoginCtrl$Password" type="password" id="BodyContent_LoginCtrl_Password" ng-model="user.password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off" data-validate="placeholder required" />
+								<input name="password" type="password" id="password" ng-model="user.password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off" data-validate="placeholder required" />
 							</div>
 						</div>
-						<input type="submit" name="ctl00$BodyContent$LoginCtrl$LoginButton" value="Login" onclick="" id="BodyContent_LoginCtrl_LoginButton" tabindex="3" class="btn btn-primary btn-block" />
+						<input type="submit" name="ctl00$BodyContent$LoginCtrl$LoginButton" value="Login" id="BodyContent_LoginCtrl_LoginButton" tabindex="3" class="btn btn-primary btn-block" />
 						
 						<input type="submit" name="ctl00$BodyContent$LoginCtrl$LoadingLoginButton" value="Login" id="BodyContent_LoginCtrl_LoadingLoginButton" class="btn btn-primary btn-block hidden" />
 					</form>
