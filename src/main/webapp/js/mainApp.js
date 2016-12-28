@@ -35,7 +35,7 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		$scope.assetService.getAssetsbyCategory(categoryName);
+		$scope.assetService.assetList = $scope.assetService.getAssetsbyCategory(categoryName);
 			/*.then(function(result) {*/
 			var url = "#getAssets";
 	    	$window.location.href = url;
@@ -80,7 +80,7 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
 //    			// called asynchronously if an error occurs
 //    			// or server returns response with an error status.
 //    		});
-    	  
+    	  var list = null;
     	  $.ajax({
     		  	method : 'POST',
     		  	contentType: "application/json",
@@ -88,13 +88,15 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
     	         url:    'api/AssetService/getAssets',
     	         data : JSON.stringify({category : this.categoryName}),
     	         success: function(data) {
-    	        	 this.assetList = data.result;
+    	        	 list = data.result;
     	                  },
     	         error: function(error) {
     	        	 alert(error);
     	         },
     	         async:   false
     	    }); 
+    	  this.assetList = list;
+    	  return list;
     	  //return deferred.promise;
       },
       
