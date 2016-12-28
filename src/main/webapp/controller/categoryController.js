@@ -1,4 +1,4 @@
-dashboardApp.controller('categoryController', function($scope, $http, $location) {
+dashboardApp.controller('categoryController', function($scope, $http, $location, $window) {
    
 	
 	$http({
@@ -13,7 +13,10 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 	
 	$scope.getAssetsbyCategory = function(categoryName) {
 		console.log(categoryName);
-		$location.path('asset.html');
+		var url = "http://" + $window.location.host + "/asset.html";
+        console.log(url);
+        $window.location.href = url;
+		//$location.path('asset.html');
 		/*$http({
 			method : 'POST',
 			url : 'api/AssetService/getAssets',

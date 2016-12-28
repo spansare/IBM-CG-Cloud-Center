@@ -1,13 +1,13 @@
 assetApp.controller('assetController', function($scope, $http, $location) {
    
-	var categoryName = "Live Demo with Bluemix";
+	$scope.categoryName = "Live Demo with Bluemix";
 	
-		console.log(categoryName);
+		console.log($scope.categoryName);
 		$http({
 			method : 'POST',
 			url : 'api/AssetService/getAssets',
 			data : {
-				'category' : categoryName
+				'category' : $scope.categoryName
 			}
 		}).success(function(data, status, headers, config) {
 			$scope.assetList = data.result;
