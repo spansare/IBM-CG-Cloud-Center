@@ -51,6 +51,9 @@ public class LoginServlet extends HttpServlet {
 					result = "{\"result\":true}";
 					HttpSession session = request.getSession();
 					session.setAttribute("username", user.getUsername());
+					
+					RequestDispatcher dispatcher = request.getRequestDispatcher("admin.html");
+			        dispatcher.forward(request, response); 
 				}
 					
 			}
@@ -62,12 +65,7 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
-		response.setContentType("application/json");
-        response.getWriter().write(result);
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("admin.html");
-        dispatcher.forward(request, response); 
     }
 	
 }
