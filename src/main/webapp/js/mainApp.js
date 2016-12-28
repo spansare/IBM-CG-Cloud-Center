@@ -35,11 +35,12 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		$scope.assetService.assetList = $scope.assetService.getAssetsbyCategory(categoryName);
-			/*.then(function(result) {*/
+		$scope.assetService.getAssetsbyCategory(categoryName)
+			.then(function(result) {
+			$scope.assetService.assetList = result;
 			var url = "#getAssets";
 	    	$window.location.href = url;
-		//});
+		});
 		
 	}
        
@@ -63,24 +64,24 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
 	
       this.categoryName = "Live Demo with Bluemix";
       this.assetList = "";
-      //var deferred = $q.defer();
+      var deferred = $q.defer();
       this.getAssetsbyCategory = function(category_input) {
     	  this.categoryName = category_input;
-//    	  $http({
-//    			method : 'POST',
-//    			url : 'api/AssetService/getAssets',
-//    			data : {
-//    				'category' : this.categoryName
-//    			}
-//    		}).success(function(data, status, headers, config) {
-//    			deferred.resolve(data);
-//    			this.assetList = data.result;
-//    			
-//    		}).error(function(data, status, headers, config) {
-//    			// called asynchronously if an error occurs
-//    			// or server returns response with an error status.
-//    		});
-    	  var list = null;
+    	  $http({
+    			method : 'POST',
+    			url : 'api/AssetService/getAssets',
+    			data : {
+    				'category' : this.categoryName
+    			}
+    		}).success(function(data, status, headers, config) {
+    			deferred.resolve(data.result);
+    			this.assetList = data.result;
+    			
+    		}).error(function(data, status, headers, config) {
+    			// called asynchronously if an error occurs
+    			// or server returns response with an error status.
+    		});
+    	  /*var list = null;
     	  $.ajax({
     		  	method : 'POST',
     		  	contentType: "application/json",
@@ -96,8 +97,8 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
     	         async:   false
     	    }); 
     	  this.assetList = list;
-    	  return list;
-    	  //return deferred.promise;
+    	  return list;*/
+    	  return deferred.promise;
       },
       
       this.getSelectedCategory = function() {
