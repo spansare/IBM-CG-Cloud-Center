@@ -35,8 +35,8 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		var myData = $scope.assetService.getAssetsbyCategory(categoryName);
-		myData.then(function(result) {
+		$scope.assetService.getAssetsbyCategory(categoryName)
+			.then(function(result) {
 			var url = "#getAssets";
 	    	$window.location.href = url;
 		});
@@ -59,10 +59,11 @@ mainApp.controller('assetController', ['$rootScope', '$scope', '$http', 'assetSe
 
 
     
-mainApp.service('assetService', ['$http', function($http) {
+mainApp.service('assetService', ['$http', function($http, $q) {
 	
       this.categoryName = "Live Demo with Bluemix";
       this.assetList = "";
+      var deferred = $q.defer();
       
       this.getAssetsbyCategory = function(category_input) {
     	  this.categoryName = category_input;
@@ -73,8 +74,9 @@ mainApp.service('assetService', ['$http', function($http) {
     				'category' : this.categoryName
     			}
     		}).success(function(data, status, headers, config) {
+    			deferred.resolve(data);
     			this.assetList = data.result;
-    			return this.assetList;
+    			return deferred.promise;
     		}).error(function(data, status, headers, config) {
     			// called asynchronously if an error occurs
     			// or server returns response with an error status.
