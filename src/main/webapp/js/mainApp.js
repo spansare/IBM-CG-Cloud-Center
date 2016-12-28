@@ -59,7 +59,7 @@ mainApp.controller('assetController', ['$rootScope', '$scope', '$http', 'assetSe
 
 
     
-mainApp.service('assetService', ['$http', function($http, $q) {
+mainApp.service('assetService', ['$http', '$q', function($http, $q) {
 	
       this.categoryName = "Live Demo with Bluemix";
       this.assetList = "";
