@@ -11,28 +11,4 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		// or server returns response with an error status.
 	});
 	
-	
-	$scope.user = {
-			username: "",
-			password: "",
-			
-			validateLogin: function() {
-				var jsonData = "{\"username\":\"" + $scope.user.username + "\",\"password\":\"" + $scope.user.password + "\"}";
-				$http({
-					method : 'POST',
-					url : 'api/UserService/validateLogin',
-					data : jsonData
-				}).success(function(data, status, headers, config) {
-					$scope.loginResult = data.result;
-					if($scope.loginResult) {
-						$location.path('/');
-					}
-					
-				}).error(function(data, status, headers, config) {
-					// called asynchronously if an error occurs
-					// or server returns response with an error status.
-				});
-			}
-	}
-
 });

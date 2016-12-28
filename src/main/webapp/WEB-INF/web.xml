@@ -13,6 +13,15 @@
     <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
   
+  <!-- Login Servlet -->  
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.ibm.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
 
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

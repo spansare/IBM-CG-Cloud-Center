@@ -17,6 +17,10 @@ $(document).ready(function () {
         return false;
     });
     
+    $('#loginBtn').on("click", function () {
+    	window.location.href='login.html';
+    });
+    
   //----- OPEN
     $('[data-popup-open]').on('click', function(e)  {
         var targeted_popup_class = jQuery(this).attr('data-popup-open');

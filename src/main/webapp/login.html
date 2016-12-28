@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html xml:lang="en">
+<head>
+	<title>
+		Login
+	</title>
+	<meta http-equiv="Cache-Control" content="No-Cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,700,900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.woff" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf" rel="stylesheet" type="text/css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">     
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    
+    <script src="app/loginApp.js"></script>
+    <script src="controller/loginController.js"></script>       
+            
+
+    <style>
+		.login-screen {
+			display: flex;
+			flex-flow: row nowrap;
+			flex: 1;
+			height: 100% !important;
+			align-content: stretch;
+			align-items: stretch;
+		}
+
+		.login-welcome {
+			display: inline-flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			align-content: flex-start;
+			flex: 1 1 auto;
+			max-width: 100%;
+			padding: 3em;
+		}
+		.login-heading {
+			font-size: 4.5vh;
+		}
+		.login-heading, .login-sub-heading {
+			font-family: ssp-xtra-light, sans-serif;
+			color: white;
+			display: block;
+		}
+
+		.login-sub-heading {
+			font-size: 3rvh;
+		}
+
+		.login {
+			background: linear-gradient(to bottom, #253447 0%, #1a4463 60%, #134f75 100%);
+			display: flex;
+			flex: 1 1 34%;
+			height: 100%;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+			align-content: flex-end;
+		}
+
+		.login-form {
+			display: flex;
+			flex-flow: row wrap;
+			flex: 1 1 90%;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			width: 90%;
+		}
+		.login-stage {
+			display: flex;
+			flex-flow: column nowrap;
+			flex: 1 1 66%;
+			height: 100%;
+			align-self: flex-start;
+			align-items: flex-start;
+			justify-content: center;
+		}
+		.login h2 {
+			color: #fff;
+		}
+    
+    </style>
+    </head>
+    <body ng-app='loginApp' ng-controller='loginController'>
+		<nav class="navbar navbar-fixed-top">
+			<div style="background-color: yellow;height:8vh;width:100%;">
+				<div class="tb_left pull-left">
+					Image Place Holder
+				</div>
+				<div class="tb_center pull-left">
+					Center Header Text
+				</div>
+				<div class="tb_right pull-right" style="padding-left:10px;padding-top:10px;">
+					<button id="homeBtn" class="btn btn-primary" data-popup-open="popup-1">Home</button>
+				</div>
+			</div>
+		</nav>
+		<div class="login-screen">
+			<div class="login-stage hidden-ph" style="height:92vh;">
+				<div class="login-welcome" id="login-welcome-1" style="display:none;">
+					<a href="http://www.ssctech.com/pdf/articles/GC_1603_SSC_Reprint.pdf?track=84" target="_blank">
+						<span class="login-heading">In The News: Global Custodian - Scaling Forward</span>
+						<span class="login-sub-heading">Fund administrators need scale to help hedge funds through a tough period, says SS&C’s new SVP Stephanie Miller.</span>
+					</a>
+
+				</div>
+				<div class="login-welcome" id="login-welcome-2" style="display:none;">
+					<a href="http://www.ssctech.com/pdf/articles/PEI_FATS2016.pdf?track=80" target="_blank">
+						<span class="login-heading">In The News: PEI - The Fund Administration & Technology Special 2016</span>
+						<span class="login-sub-heading">Today’s fund administrators can play a vital role as GPs move into new geographies, new asset classes and larger funds under the watchful eye of regulators around the world, says Joe Patellaro.</span>
+					</a>
+				</div>
+				<div class="login-welcome" id="login-welcome-3" style="display:none;">
+					<a href="http://www.ssctech.com/contactus/downloadresource.aspx?ty=whitepaper&rid=114" target="_blank">
+						<span class="login-heading">Strategies For Competing in the Digital Age</span>
+						<span class="login-sub-heading">Digitalization is changing the rules for asset management. SS&C explores six trends affecting competition in the digital age.</span>
+					</a>
+				</div>
+				<div class="login-welcome" id="login-welcome-4" style="display:none;">
+					<a href="http://www.ssctech.com/contactus/downloadresource.aspx?ty=whitepaper&rid=91" target="_blank">
+						<span class="login-heading">CRM II: Finding a Flexible Solution in the Compliance Era</span>
+						<span class="login-sub-heading">In light of forthcoming changes from CRM II, consider rethinking your compliance strategy as an opportunity for operational enhancement.</span>
+					</a>
+				</div>
+				<div class="login-welcome" id="login-welcome-5" style="display:none;">
+					<a href="http://www.ssctech.com/contactus/downloadresource.aspx?ty=whitepaper&rid=98" target="_blank">
+						<span class="login-heading">Performance Best Practices: Achieving Transparency Across the Stakeholder Spectrum</span>
+						<span class="login-sub-heading">Performance Measurement has become a key priority for asset management firms. SS&C explores how organizations can meet the increased demand for transparency.</span>
+					</a>
+				</div>
+				<div class="login-welcome" id="login-welcome-6" style="display:none;">
+					<a href="https://www.youtube.com/embed/CgGcIOpyQco?rel=0" target="_blank">
+						<span class="login-heading">The Future Of Fund Administration Is Here</span>
+						<span class="login-sub-heading">Watch the video.</span>
+					</a>
+				</div>
+			</div>
+			<div class="login" style="height:92vh;">
+				<div class="login-form">
+					<form ng-submit="user.validateLogin()"  id="ctl00">
+						<h2>Login</h2>
+						<div class="bg-danger text-danger FailureCont">
+						</div>
+						<div class="form-group">
+							<span id="BodyContent_LoginCtrl_UserNameRequired" title="Username is required." class="bg-danger text-danger block" style="visibility:hidden;">Username is required.</span>
+							<div class="input-group login-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<input name="ctl00$BodyContent$LoginCtrl$UserName" type="text" id="BodyContent_LoginCtrl_UserName" ng-model="user.username" tabindex="1" class="form-control" placeholder="Username" autocomplete="off" data-validate="placeholder required" />
+							</div>
+						</div>
+						<div class="form-group">
+							<span id="BodyContent_LoginCtrl_PasswordRequired" title="Password is required." class="bg-danger text-danger block" style="visibility:hidden;">Password is required.</span>
+							<div class="input-group login-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								<input name="ctl00$BodyContent$LoginCtrl$Password" type="password" id="BodyContent_LoginCtrl_Password" ng-model="user.password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off" data-validate="placeholder required" />
+							</div>
+						</div>
+						<input type="submit" name="ctl00$BodyContent$LoginCtrl$LoginButton" value="Login" onclick="" id="BodyContent_LoginCtrl_LoginButton" tabindex="3" class="btn btn-primary btn-block" />
+						
+						<input type="submit" name="ctl00$BodyContent$LoginCtrl$LoadingLoginButton" value="Login" id="BodyContent_LoginCtrl_LoadingLoginButton" class="btn btn-primary btn-block hidden" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom" style="height:8vh;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-sm-7">
+						<ul class="flinks">
+							<li><a href="./index.html">Site Map</a></li>
+							<li><a href="./index.html">Search Terms</a></li>
+						</ul>
+						<br>
+						<p>Copyright 2017 · Designed &amp; Developed by <a href="#">jThemes Studio.</a> All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="large" class="hidden-md hidden-sm hidden-xs"></div>
+		<div id="medium" class="hidden-lg hidden-sm hidden-xs"></div>
+		<div id="small" class="hidden-lg hidden-md hidden-xs"></div>
+		<div id="x-small" class="hidden-lg hidden-md hidden-sm"></div>
+
+		<script type="text/javascript">
+			var	lrg = $('#large').is(':visible'),
+			med = $('#medium').is(':visible'),
+			sml = $('#small').is(':visible'),
+			xsm = $('#x-small').is(':visible');
+
+			var messageCount = 6,
+			transitionTime = 500,
+			waitTime = 9000,
+			randomMessage = random(messageCount, null);
+
+			$("#login-welcome-" + randomMessage).show();
+			window.setInterval(function () {
+				$("#login-welcome-" + randomMessage).fadeOut(transitionTime, function () {
+					randomMessage = random(messageCount, randomMessage);
+					$("#login-welcome-" + randomMessage).fadeIn(transitionTime);
+				});
+				
+			}, 2 * transitionTime + waitTime);
+			
+			if (lrg || med) {
+				var imageCount = 3,
+					randomImage = random(imageCount, null);
+				imgPath = ('./images/blocks/' + randomImage + '.jpg');
+				$('.login-stage').css({
+					"background-image": "linear-gradient(to right, rgba(11, 79, 96, 1), rgba(68, 138, 154, 0.6)), url('" + imgPath + "')",
+					"background-size": "contain, cover",
+					"background-repeat": "no-repeat, no-repeat"
+				});
+		
+			}
+			if(sml || xsm) {
+				$('.login-stage').css({
+					"background-image": "linear-gradient(to right, rgba(11, 79, 96, 1), rgba(68, 138, 154, 0.6))",
+					"background-size": "contain",
+					"background-repeat": "no-repeat"
+				});
+			}
+			   
+			   function random(n, x) {
+				   var randomNum = Math.round(Math.random() * (n - 1)) + 1;
+				   if (randomNum == x) {
+					   while (randomNum == x) {
+						   randomNum = Math.round(Math.random() * (n - 1)) + 1;
+					   }
+				   }
+				   return randomNum;
+			   }
+			   
+		   $('#homeBtn').on("click", function () {
+		    	window.location.href='index.html';
+		    });
+		</script>
+    </body>
+</html>

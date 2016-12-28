@@ -39,7 +39,6 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
     color: #444;
-    background: #FFF url("../images/pattern/wood_pattern.png") 
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -1343,7 +1342,7 @@ footer {
 
 .footer-bottom {
     background: #131313;
-    padding: 25px 0;
+    padding: 3px 0;
 }
 
 .footer-bottom p {
