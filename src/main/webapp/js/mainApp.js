@@ -63,25 +63,40 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
 	
       this.categoryName = "Live Demo with Bluemix";
       this.assetList = "";
-      var deferred = $q.defer();
+      //var deferred = $q.defer();
       
       this.getAssetsbyCategory = function(category_input) {
     	  this.categoryName = category_input;
-    	  $http({
-    			method : 'POST',
-    			url : 'api/AssetService/getAssets',
-    			data : {
-    				'category' : this.categoryName
-    			}
-    		}).success(function(data, status, headers, config) {
-    			deferred.resolve(data);
-    			this.assetList = data.result;
-    			
-    		}).error(function(data, status, headers, config) {
-    			// called asynchronously if an error occurs
-    			// or server returns response with an error status.
-    		});
-    	  return deferred.promise;
+//    	  $http({
+//    			method : 'POST',
+//    			url : 'api/AssetService/getAssets',
+//    			data : {
+//    				'category' : this.categoryName
+//    			}
+//    		}).success(function(data, status, headers, config) {
+//    			deferred.resolve(data);
+//    			this.assetList = data.result;
+//    			
+//    		}).error(function(data, status, headers, config) {
+//    			// called asynchronously if an error occurs
+//    			// or server returns response with an error status.
+//    		});
+    	  
+    	  $.ajax({
+    		  	method : 'POST',
+    	         url:    'api/AssetService/getAssets',
+    	         data : {
+     				'category' : this.categoryName
+     				},
+    	         success: function(data) {
+    	        	 this.assetList = data.result;
+    	                  },
+    	         error: function(error) {
+    	        	 alert(error);
+    	         },
+    	         async:   false
+    	    }); 
+    	  //return deferred.promise;
       },
       
       this.getSelectedCategory = function() {
