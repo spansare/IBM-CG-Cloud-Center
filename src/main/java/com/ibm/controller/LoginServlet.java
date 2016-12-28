@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("application/json");
         response.getWriter().write(result);
         
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("admin.html");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("admin.html");
         dispatcher.forward(request, response); 
     }
 	
