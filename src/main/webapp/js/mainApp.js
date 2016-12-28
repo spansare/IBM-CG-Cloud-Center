@@ -18,7 +18,7 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 	}]);
 
 
-mainApp.controller('categoryController', ['$rootScope', '$scope', 'assetService', function ($rootScope, $scope, assetService) {
+mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', 'assetService', function ($rootScope, $scope, assetService) {
 
 	$scope.assetService = assetService;   
    
@@ -43,7 +43,7 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', 'assetService'
 
 
 
-mainApp.controller('assetController', ['$rootScope', '$scope', 'assetService', function ($rootScope, $scope, assetService) {
+mainApp.controller('assetController', ['$rootScope', '$scope', '$http', 'assetService', function ($rootScope, $scope, assetService) {
 
 	$scope.assetService = assetService;
 	
