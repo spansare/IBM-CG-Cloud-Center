@@ -11,7 +11,7 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		// or server returns response with an error status.
 	});
 	
-	function getAssets(categoryName) {
+	$scope.getAssets = function(categoryName) {
 		console.log(categoryName);
 		$http({
 			method : 'GET',
@@ -27,8 +27,8 @@ dashboardApp.controller('categoryController', function($scope, $http, $location)
 		});
 	}
 	
-	function getAssetsbyCategory() {
-		console.log(categoryName);
+	$scope.getAssetsbyCategory = function() {
+		console.log("Live Demo with Bluemix");
 		$http({
 			method : 'GET',
 			url : 'api/AssetService/getAssets',
