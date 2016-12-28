@@ -5,11 +5,13 @@ loginApp.controller('loginController', function($scope, $http) {
 			password: "",
 			
 			validateLogin: function() {
-				var jsonData = "{\"username\":\"" + $scope.user.username + "\",\"password\":\"" + $scope.user.password + "\"}";
 				$http({
 					method : 'POST',
 					url : 'loginServlet',
-					data : jsonData
+					data : {
+						'username' : $scope.user.username,
+						'password' : $scope.user.password
+					}
 				}).success(function(data, status, headers, config) {
 					$scope.loginResult = data.result;
 					

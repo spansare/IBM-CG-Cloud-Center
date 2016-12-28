@@ -1,6 +1,7 @@
 package com.ibm.controller;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Enumeration;
 
@@ -11,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ibm.json.java.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.ibm.user.User;
 import com.ibm.user.UserDAO;
 
@@ -27,34 +30,38 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String result = new String();
 		
-		Enumeration<String> parameterNames = request.getParameterNames();
-		
-        while (parameterNames.hasMoreElements()) {
-
-            String paramName = parameterNames.nextElement();
-            System.out.println("Parameter name : " + paramName);
-            System.out.println("Parameter value : " + request.getParameter(paramName));
+		StringBuilder sb = new StringBuilder();
+        BufferedReader br = request.getReader();
+        String str = null;
+        
+        while ((str = br.readLine()) != null) {
+            sb.append(str);
         }
-		
-			 
-		
-		String input = request.getParameter("data");
-		System.out.println("Snehal : " + input);
-        JSONObject json = new JSONObject().parse(input);
-		UserDAO userDao = new UserDAO();
-		User user = userDao.getUser((String) json.get("username"));
-		if (user != null)
-		{
-			if (user.getPassword().equals(json.get("password"))) {
-				result = "{\"result\":true}";
-				HttpSession session = request.getSession();
-				session.setAttribute("username", user.getUsername());
+        
+		try {
+			JSONObject jObj = new JSONObject(sb.toString());
+			
+			System.out.println("Snehal : " + jObj.toString());
+			
+			UserDAO userDao = new UserDAO();
+			User user = userDao.getUser((String) jObj.get("username"));
+			if (user != null)
+			{
+				if (user.getPassword().equals(jObj.get("password"))) {
+					result = "{\"result\":true}";
+					HttpSession session = request.getSession();
+					session.setAttribute("username", user.getUsername());
+				}
+					
 			}
-				
+			else {
+				result = "{\"result\":false}";
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		else {
-			result = "{\"result\":false}";
-		}
+		
 		
 		response.setContentType("application/json");
         response.getWriter().write(result);
