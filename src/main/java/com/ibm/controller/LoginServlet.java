@@ -2,6 +2,7 @@ package com.ibm.controller;
 
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,6 +26,18 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String result = new String();
+		
+		Enumeration<String> parameterNames = request.getParameterNames();
+		
+        while (parameterNames.hasMoreElements()) {
+
+            String paramName = parameterNames.nextElement();
+            System.out.println("Parameter name : " + paramName);
+            System.out.println("Parameter value : " + request.getParameter(paramName));
+        }
+		
+			 
+		
 		String input = request.getParameter("data");
 		System.out.println("Snehal : " + input);
         JSONObject json = new JSONObject().parse(input);
