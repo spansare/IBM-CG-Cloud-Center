@@ -35,11 +35,11 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		$scope.assetService.getAssetsbyCategory(categoryName)
-			.then(function(result) {
+		$scope.assetService.getAssetsbyCategory(categoryName);
+			/*.then(function(result) {*/
 			var url = "#getAssets";
 	    	$window.location.href = url;
-		});
+		//});
 		
 	}
        
@@ -83,6 +83,8 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
     	  
     	  $.ajax({
     		  	method : 'POST',
+    		  	contentType: "application/json",
+    	        dataType: "json",
     	         url:    'api/AssetService/getAssets',
     	         data : {
      				'category' : this.categoryName
