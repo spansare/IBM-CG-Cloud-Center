@@ -18,7 +18,7 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 	}]);
 
 
-mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', 'assetService', function ($rootScope, $scope, $http, assetService) {
+mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$window', 'assetService', function ($rootScope, $scope, $http, $window, assetService) {
 
 	$scope.assetService = assetService;   
    
@@ -35,7 +35,7 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', 'asse
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		var url = "http://" + $window.location.host + "/asset.html";
+		var url = "#getAssets";
     	$window.location.href = url;
 	}
        
