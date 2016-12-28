@@ -76,11 +76,12 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
     		}).success(function(data, status, headers, config) {
     			deferred.resolve(data);
     			this.assetList = data.result;
-    			return deferred.promise;
+    			
     		}).error(function(data, status, headers, config) {
     			// called asynchronously if an error occurs
     			// or server returns response with an error status.
     		});
+    	  return deferred.promise;
       },
       
       this.getSelectedCategory = function() {
