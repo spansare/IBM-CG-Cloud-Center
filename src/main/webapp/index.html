@@ -142,9 +142,9 @@
             <div class="block-main container">
                 <div class="row">
                     <div class="col-md-4 col-sm-3" ng-repeat="category in categoryList">
-                        <div class="block-content" ng-click="getAssets(category.category_name)">
-                            <img src={{category.image_url}} class="img-responsive" alt="" ng-click="getAssets(category.category_name)"/>
-                            <div class="bs-text-down text-center hvr-outline-out" ng-click="getAssets(category.category_name)">
+                        <div class="block-content" ng-click="getAssetsbyCategory()">
+                            <img src={{category.image_url}} class="img-responsive" alt="" ng-click="getAssetsbyCategory()"/>
+                            <div class="bs-text-down text-center hvr-outline-out" ng-click="getAssetsbyCategory()">
                                 {{category.category_name}}<span>{{category.short_description}}</span>				
                             </div>
                         </div>
