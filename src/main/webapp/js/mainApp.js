@@ -1,5 +1,22 @@
 var mainApp = angular.module('mainApp', ['ngRoute']);
 
+mainApp.config(['$routeProvider', function($routeProvider) {
+	   $routeProvider.
+	   
+	   when('/getAssets', {
+	      templateUrl: 'asset.html', controller: 'assetController'
+	   }).
+	   
+	   when('/catalog', {
+	      templateUrl: 'category.html', controller: 'categoryController'
+	   }).
+	   
+	   otherwise({
+	      redirectTo: '/catalog'
+	   });
+		
+	}]);
+
 
 mainApp.controller('categoryController', ['$rootScope', '$scope', 'assetService', function ($rootScope, $scope, assetService) {
 
