@@ -59,6 +59,7 @@ mainApp.controller('assetController', ['$rootScope', '$scope', '$http', 'assetSe
 mainApp.service('assetService', ['$http', function($http) {
 	
       this.categoryName = "Live Demo with Bluemix";
+      this.assetList = "";
       
       this.getAssetsbyCategory = function(category_input) {
     	  this.categoryName = category_input;
