@@ -35,9 +35,12 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		$scope.assetService.getAssetsbyCategory(categoryName);
-		var url = "#getAssets";
-    	$window.location.href = url;
+		var myData = $scope.assetService.getAssetsbyCategory(categoryName);
+		myData.then(function(result) {
+			var url = "#getAssets";
+	    	$window.location.href = url;
+		});
+		
 	}
        
 }]);
@@ -71,6 +74,7 @@ mainApp.service('assetService', ['$http', function($http) {
     			}
     		}).success(function(data, status, headers, config) {
     			this.assetList = data.result;
+    			return this.assetList;
     		}).error(function(data, status, headers, config) {
     			// called asynchronously if an error occurs
     			// or server returns response with an error status.
