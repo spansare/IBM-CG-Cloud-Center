@@ -64,7 +64,6 @@ mainApp.service('assetService', ['$http', '$q', function($http, $q) {
       this.categoryName = "Live Demo with Bluemix";
       this.assetList = "";
       //var deferred = $q.defer();
-      
       this.getAssetsbyCategory = function(category_input) {
     	  this.categoryName = category_input;
 //    	  $http({
