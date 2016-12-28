@@ -35,7 +35,7 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
-		$scope.assetService.getAssets(categoryName);
+		$scope.assetService.getAssetsbyCategory(categoryName);
 		var url = "#getAssets";
     	$window.location.href = url;
 	}
