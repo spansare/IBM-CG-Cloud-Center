@@ -35,6 +35,7 @@ mainApp.controller('categoryController', ['$rootScope', '$scope', '$http', '$win
 	$scope.getAssetsbyCategory = function(categoryName) {
 		
 		console.log(categoryName);
+		$scope.assetService.getAssets(categoryName);
 		var url = "#getAssets";
     	$window.location.href = url;
 	}
@@ -47,29 +48,41 @@ mainApp.controller('assetController', ['$rootScope', '$scope', '$http', 'assetSe
 
 	$scope.assetService = assetService;
 	
-	$scope.categoryName = "Live Demo with Bluemix";
+	$scope.categoryName = $scope.assetService.getSelectedCategory();
 	
-	console.log($scope.categoryName);
-	$http({
-		method : 'POST',
-		url : 'api/AssetService/getAssets',
-		data : {
-			'category' : $scope.categoryName
-		}
-	}).success(function(data, status, headers, config) {
-		$scope.assetList = data.result;
-	}).error(function(data, status, headers, config) {
-		// called asynchronously if an error occurs
-		// or server returns response with an error status.
-	});
-
+	$scope.assetList = $scope.assetService.getAssets();
     
 }]);
 
 
     
-mainApp.service('assetService', function() {
+mainApp.service('assetService', ['$http', function($http) {
 	
-      this.xxx = "yyy";
+      this.categoryName = "Live Demo with Bluemix";
+      
+      this.getAssetsbyCategory = function(category_input) {
+    	  this.categoryName = category_input;
+    	  $http({
+    			method : 'POST',
+    			url : 'api/AssetService/getAssets',
+    			data : {
+    				'category' : this.categoryName
+    			}
+    		}).success(function(data, status, headers, config) {
+    			this.assetList = data.result;
+    		}).error(function(data, status, headers, config) {
+    			// called asynchronously if an error occurs
+    			// or server returns response with an error status.
+    		});
+      },
+      
+      this.getSelectedCategory = function() {
+    	  
+    	  return this.categoryName;
+      }
     
-});
+      this.getAssets = function() {
+    	  
+    	  return this.assetList;
+      }
+}]);
