@@ -17,10 +17,10 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf" rel="stylesheet" type="text/css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/jquery-ui.css">     
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/asset.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/jquery-ui.css">     
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/asset.css">
 		
 		<!-- Javascript -->
         		
@@ -32,8 +32,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
     	
-		<script src="js/adminApp.js"></script>
-    	<script src="js/main.js"></script>
+		<script src="../js/adminApp.js"></script>
+    	<script src="../js/main.js"></script>
 		
 		
 		<!--#region Bullet Navigator Skin Begin -->

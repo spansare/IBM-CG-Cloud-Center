@@ -22,6 +22,16 @@
     <servlet-name>loginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
+  
+  <filter>  
+	<filter-name>f1</filter-name>  
+	<filter-class>MyFilter</filter-class>  
+  </filter>  
+   
+	<filter-mapping>  
+	<filter-name>f1</filter-name>  
+	<url-pattern>/admin/*.jsp</url-pattern>  
+	</filter-mapping>  
 
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

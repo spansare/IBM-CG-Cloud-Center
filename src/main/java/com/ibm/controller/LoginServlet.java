@@ -34,20 +34,29 @@ public class LoginServlet extends HttpServlet {
 			
 			UserDAO userDao = new UserDAO();
 			User user = userDao.getUser(userName);
+			HttpSession session = request.getSession(false);
 			if (user != null)
 			{
 				if (user.getPassword().equals(password)) {
-					HttpSession session = request.getSession();
+					
 					session.setAttribute("username", user.getUsername());
 					
 					response.setContentType("text/html"); 
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.html");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin.jsp");
+			        dispatcher.forward(request, response); 
+				} else {
+					response.setContentType("text/html"); 
+					request.setAttribute("errorMsg", "Invalid Password");
+					session.setAttribute("username", null);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 			        dispatcher.forward(request, response); 
 				}
 			}
 			else {
 				response.setContentType("text/html"); 
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/index.html");
+				request.setAttribute("errorMsg", "Invalid User");
+				session.setAttribute("username", null);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 		        dispatcher.forward(request, response); 
 			}
 		} catch (Exception e) {

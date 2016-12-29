@@ -18,7 +18,7 @@ $(document).ready(function () {
     });
     
     $('#loginBtn').on("click", function () {
-    	window.location.href='login.html';
+    	window.location.href='login.jsp';
     });
     
     $('#homeBtn').on("click", function () {
