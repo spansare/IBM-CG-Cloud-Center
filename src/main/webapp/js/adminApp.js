@@ -81,6 +81,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	    		}).error(function(data, status, headers, config) {
 	    			// called asynchronously if an error occurs
 	    			// or server returns response with an error status.
+	    			alert("Failed to create Category.");
 	    		});
 				
 				return deferred.promise;
@@ -125,7 +126,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	    			method : 'POST',
 	    			url : 'api/AssetService/createAsset',
 	    			data : {
-	    				'name' : $scope.asset.category_name,
+	    				'name' : $scope.asset.name,
 	    				'category' : $scope.asset.category,
 	    				'short_description' : $scope.asset.short_description,
 	    				'long_description' : $scope.asset.long_description,
@@ -142,6 +143,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	    		}).error(function(data, status, headers, config) {
 	    			// called asynchronously if an error occurs
 	    			// or server returns response with an error status.
+	    			alert("Failed to create Asset.");
 	    		});
 				
 				return deferred.promise;
