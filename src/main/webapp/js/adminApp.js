@@ -4,11 +4,11 @@ adminApp.config(['$routeProvider', function($routeProvider) {
 	   $routeProvider.
 	   
 	   when('/getAdminAssets', {
-	      templateUrl: 'asset_admin.html', controller: 'assetAdminController'
+	      templateUrl: 'admin_asset.html', controller: 'assetAdminController'
 	   }).
 	   
 	   when('/adminCatalog', {
-	      templateUrl: 'category_admin.html', controller: 'categoryAdminController'
+	      templateUrl: 'admin_category.html', controller: 'categoryAdminController'
 	   }).
 	   
 	   otherwise({
