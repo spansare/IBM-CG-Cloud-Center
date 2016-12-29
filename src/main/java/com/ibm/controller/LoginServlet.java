@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("username", user.getUsername());
 					
 					response.setContentType("text/html"); 
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/admin.jsp");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.jsp");
 			        dispatcher.forward(request, response); 
 				} else {
 					response.setContentType("text/html"); 
