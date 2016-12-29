@@ -4105,6 +4105,7 @@ button.close {
     position: relative;
     overflow: hidden;
     background:#fff;
+    top: 8vh;
 }
 
 .body.boxed {

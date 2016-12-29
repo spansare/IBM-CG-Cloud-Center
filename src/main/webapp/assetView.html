@@ -1,65 +1,71 @@
-<h3 class="top-head-h3">{{categoryName}}</h3>
-<div class="container12" ng-repeat="asset in assetList">
-	<div class="column10 prefix1">
-		<h3>{{asset.asset_title}}</h3>
-		<p></p>
-		<div class="screen-shots ng-scope" style="width: 100%;">
-			<img src={{asset.image_url}}> 
+<div class="body">
+	<div class="tb_right pull-right top-head-h3">
+		<h3>{{categoryName}}</h3>
+		<button id="loginOutBtn" class="btn btn-primary headerBtn">Logout</button>
+		<button id="createAssetBtn" ng-click="showCreateAssetForm()" class="btn btn-primary headerBtn">Add Asset</button>
+	</div>
+	<div class="container12" ng-repeat="asset in assetList">
+		<div class="column10 prefix1">
+			<h3>{{asset.asset_title}}</h3>
+			<p></p>
+			<div class="screen-shots ng-scope" style="width: 100%;">
+				<img src={{asset.image_url}}> 
+			</div>
+			<section id="works-methods-" class="section section-3" lang="en">
+				<p></p>
+				<div class="works-and-methods-wrapper">
+					<div class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+						<div class="wm-title" style="transform: translate(0px, 0px);"><h5>Overview</h5></div>
+					</div>
+					<div class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+						<div class="wm-content" style="transform: translate(0px, 0px);">
+						<p>{{asset.short_description}}</p>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="works-and-methods-wrapper">
+					<div
+						class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+						<div class="wm-title" style="transform: translate(0px, 0px);">
+							<h5>Description</h5>
+						</div>
+					</div>
+					<div
+						class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+						<div class="wm-content" style="transform: translate(0px, 0px);">
+							<p>{{asset.long_description}}</p>
+						</div>
+					</div>
+				</div>
+				<br>
+				<!-- <div class="works-and-methods-wrapper">
+					<div
+						class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+						<div class="wm-title" style="transform: translate(0px, 0px);">
+							<h5>
+								Classic<br> Artistic<br> Expressions
+							</h5>
+						</div>
+					</div>
+					<div
+						class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+						<div class="wm-content" style="transform: translate(0px, 0px);">
+							
+							<p>
+								The most recent addition to Rytter &amp; Rytter’s field of
+								expertise is interactive<br> arts in cyberspace.
+							</p>
+						</div>
+					</div>
+				</div> -->
+				<p></p>
+				<div class="details-btmLinks">
+					<a href={{asset.document_url}} target="_blank" class="ng-scope">Document</a>
+					<a href={{asset.demo_url}} target="_blank" class="ng-scope">Application</a>
+				</div>
+			</section>
+	
 		</div>
-		<section id="works-methods-" class="section section-3" lang="en">
-			<p></p>
-			<div class="works-and-methods-wrapper">
-				<div class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
-					<div class="wm-title" style="transform: translate(0px, 0px);"><h5>Overview</h5></div>
-				</div>
-				<div class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
-					<div class="wm-content" style="transform: translate(0px, 0px);">
-					<p>{{asset.short_description}}</p>
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="works-and-methods-wrapper">
-				<div
-					class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
-					<div class="wm-title" style="transform: translate(0px, 0px);">
-						<h5>Description</h5>
-					</div>
-				</div>
-				<div
-					class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
-					<div class="wm-content" style="transform: translate(0px, 0px);">
-						<p>{{asset.long_description}}</p>
-					</div>
-				</div>
-			</div>
-			<br>
-			<!-- <div class="works-and-methods-wrapper">
-				<div
-					class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
-					<div class="wm-title" style="transform: translate(0px, 0px);">
-						<h5>
-							Classic<br> Artistic<br> Expressions
-						</h5>
-					</div>
-				</div>
-				<div
-					class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
-					<div class="wm-content" style="transform: translate(0px, 0px);">
-						
-						<p>
-							The most recent addition to Rytter &amp; Rytter’s field of
-							expertise is interactive<br> arts in cyberspace.
-						</p>
-					</div>
-				</div>
-			</div> -->
-			<p></p>
-			<div class="details-btmLinks">
-				<a href={{asset.document_url}} target="_blank" class="ng-scope">Document</a>
-				<a href={{asset.demo_url}} target="_blank" class="ng-scope">Application</a>
-			</div>
-		</section>
-
 	</div>
 </div>
