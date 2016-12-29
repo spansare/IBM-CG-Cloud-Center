@@ -11,14 +11,6 @@ adminApp.config(['$routeProvider', function($routeProvider) {
 	      templateUrl: 'admin_categoryView.html', controller: 'categoryAdminController'
 	   }).
 	   
-	   when('/createCategory', {
-	      templateUrl: 'createCategoryView.html', controller: 'categoryManagementController'
-	   }).
-	   
-	   when('/createAsset', {
-	      templateUrl: 'createAssetView.html', controller: 'assetManagementController'
-	   }).
-	   
 	   otherwise({
 	      redirectTo: '/adminCatalog'
 	   });
@@ -99,44 +91,52 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 
 
 
-adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', 'assetAdminService', function ($rootScope, $scope, $http, assetAdminService) {
+adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$q', '$window', 'assetAdminService', function ($rootScope, $scope, $http, $q, $window, assetAdminService) {
 
 	$scope.assetAdminService = assetAdminService;
 	
 	$scope.categoryName = $scope.assetAdminService.getSelectedCategory();
 	
 	$scope.assetList = $scope.assetAdminService.getAssets();
-    
-}]);
-
-
-adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$http', '$q', '$window', function ($rootScope, $scope, $http, $q, $window) {
-
-	var deferred = $q.defer();
-	$scope.showForm = false;
 	
-	$scope.category = {
-			category_name : "",
+	var deferred = $q.defer();
+	$scope.showCreateAssetForm = false;
+	
+	$scope.showCreateAssetForm = function() {
+		$scope.showCreateAssetForm = true;
+	}
+	
+	$scope.hideCreateAssetForm = function() {
+		$scope.showCreateAssetForm = false;
+	}
+	
+	$scope.asset = {
+			name : "",
+			category : "",
 			short_description : "",
 			long_description : "",
 			image_url : "",
+			document_url : "",
+			demo_url : "",
 			result : false,
 			
-			createCategory : function() {
+			createAsset : function() {
 				$http({
 	    			method : 'POST',
-	    			url : 'api/CategoryService/createCategory',
+	    			url : 'api/AssetService/createAsset',
 	    			data : {
-	    				'name' : $scope.category.category_name,
-	    				'short_description' : $scope.category.short_description,
-	    				'long_description' : $scope.category.long_description,
-	    				'image_url' : $scope.category.image_url
+	    				'name' : $scope.asset.category_name,
+	    				'category' : $scope.asset.category,
+	    				'short_description' : $scope.asset.short_description,
+	    				'long_description' : $scope.asset.long_description,
+	    				'image_url' : $scope.asset.image_url,
+	    				'document_url' : $scope.asset.document_url,
+	    				'demo_url' : $scope.asset.demo_url
 	    			}
 	    		}).success(function(data, status, headers, config) {
-	    			$scope.result = data.result;
 	    			deferred.resolve(data.result);
-	    			alert("Category created successfully!!!");
-	    			var url = "#adminCatalog";
+	    			alert("Asset created successfully!!!");
+	    			var url = "#getAdminAssets";
 	    	    	$window.location.href = url;
 	    			
 	    		}).error(function(data, status, headers, config) {
@@ -147,6 +147,7 @@ adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$h
 				return deferred.promise;
 			}
 	}
+	
     
 }]);
 

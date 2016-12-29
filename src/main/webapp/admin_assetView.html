@@ -1,9 +1,9 @@
 <div class="tb_right pull-right top-head-h3">
 	<h3>{{categoryName}}</h3>
 	<button id="loginOutBtn" class="btn btn-primary headerBtn">Logout</button>
-	<button id="createAssetBtn" onclick="showAssetForm();" class="btn btn-primary headerBtn">Add Asset</button>
+	<button id="createAssetBtn" ng-click="showCreateAssetForm()" class="btn btn-primary headerBtn">Add Asset</button>
 </div>
-<div id="assetcontainer" style="display:none;height: 600px;">
+<div id="assetcontainer" style="display:none;height: 600px;" ng-show="showCreateAssetForm">
 <form class="form-horizontal">
 	<h2>Enter  Asset Details</h2>
 	<div class="form-group">
@@ -44,8 +44,8 @@
 	</div>
 	<div class="form-group">        
 	  <div class="col-sm-offset-3 col-sm-7">
-		<button type="submit" class="btn btn-default">Submit</button>
-		<button onclick="hideAssetForm();" class="btn btn-default">Cancel</button>
+		<button type="submit" class="btn btn-default" ng-click="asset.createAsset()">Submit</button>
+		<button ng-click="hideCreateAssetForm()" class="btn btn-default">Cancel</button>
 		  </div>
 		</div>
 	</form>

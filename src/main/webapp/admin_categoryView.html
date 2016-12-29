@@ -1,7 +1,7 @@
 <div class="body" style="padding-top: 50px;">
 	<div class="tb_right pull-right top-head-h3">
-		<button id="createCategoryBtn" onclick="showAddCategoryForm()" class="btn btn-primary">Add Category</button>
-		<button id="loginOutBtn" class="btn btn-primary">Logout</button>
+		<button id="createCategoryBtn" ng-click="showAddCategoryForm()" class="btn btn-primary headerBtn">Add Category</button>
+		<button id="loginOutBtn" class="btn btn-primary headerBtn">Logout</button>
 	</div>
 	<div id="categorycontainer" style="display:none;height: 600px;" ng-show="showForm">
 		<form class="form-horizontal">
@@ -33,7 +33,7 @@
 			<div class="form-group">        
 			  <div class="col-sm-offset-3 col-sm-7">
 				<button type="submit" class="btn btn-default" ng-click="category.createCategory()">Submit</button>
-				<button onclick="hideAddCategoryForm()" class="btn btn-default">Cancel</button>
+				<button ng-click="hideAddCategoryForm()" class="btn btn-default">Cancel</button>
 			  </div>
 			</div>
 		</form>
