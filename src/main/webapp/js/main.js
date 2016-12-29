@@ -17,13 +17,18 @@ $(document).ready(function () {
         return false;
     });
     
-    $('#loginBtn').on("click", function () {
-    	window.location.href='login.jsp';
-    });
-    
-    $('#homeBtn').on("click", function () {
-    	window.location.href='index.html';
-    });
+	$('body').on('click', '#loginBtn', function () {
+		 window.location.href='login.jsp';
+	});
+	$('body').on('click', '#homeBtn', function () {
+		 window.location.href='index.html';
+	});
+	$('body').on('click', '#loginOutBtn', function () {
+		 window.location.href='index.html';
+	});
+	$('body').on('click', '#adminHomeBtn', function () {
+		 window.location.href='admin.jsp';
+	});
 	    
 });
 

@@ -1,8 +1,9 @@
+<div class="top-head-h3">
+	<button id="homeBtn" class="btn btn-primary headerBtnLeft">Home</button>
+	<h3 style="text-align:center;">{{categoryName}}</h3>
+	<button id="loginBtn" class="btn btn-primary headerBtn" style="margin-top:-20px;">Login</button>
+</div>
 <div class="body">
-	<div class="tb_right pull-right top-head-h3">
-		<button id="homeBtn" class="btn btn-primary headerBtnLeft tb_left pull-left">Home</button>
-		<h3>{{categoryName}}</h3>
-	</div>
 	<div class="container12" ng-repeat="asset in assetList">
 		<div class="column10 prefix1">
 			<h3>{{asset.asset_title}}</h3>

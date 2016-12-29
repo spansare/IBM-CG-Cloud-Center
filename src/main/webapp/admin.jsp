@@ -88,7 +88,7 @@
         <div id="loader" style="display: none;"></div>
         <!-- HEADER -->
         <nav class="navbar navbar-fixed-top">
-            <div style="background-color: yellow;height:50px;width:100%;">
+            <div style="background-color: yellow;height:8vh;width:100%;">
                 <div class="tb_left pull-left">
                 	Image Place Holder
 				</div>

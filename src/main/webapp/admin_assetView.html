@@ -1,10 +1,10 @@
+<div class="top-head-h3">
+	<button id="adminHomeBtn" class="btn btn-primary headerBtnLeft tb_left pull-left">Home</button>
+	<h3 style="text-align:center;">{{categoryName}}</h3>
+	<button id="loginOutBtn" class="btn btn-primary headerBtn tb_right pull-right" style="margin-top:-20px;">Logout</button>
+	<button id="createAssetBtn" ng-click="showCreateAssetForm()" class="btn btn-primary headerBtn tb_right pull-right" style="margin-top:-20px;">Add Asset</button>
+</div>
 <div class="body">
-	<div class=" top-head-h3">
-		<button id="adminHomeBtn" class="btn btn-primary headerBtnLeft tb_left pull-left">Home</button>
-		<h3 style="text-align:center;">{{categoryName}}</h3>
-		<button id="loginOutBtn" class="btn btn-primary headerBtn tb_right pull-right">Logout</button>
-		<button id="createAssetBtn" ng-click="showCreateAssetForm()" class="btn btn-primary headerBtn tb_right pull-right">Add Asset</button>
-	</div>
 	<div id="assetcontainer" style="height: 600px;" ng-show="showCreateAssetForm">
 	<form class="form-horizontal">
 		<h2>Enter  Asset Details</h2>

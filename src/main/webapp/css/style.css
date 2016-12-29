@@ -31,8 +31,6 @@ Author: JTHEMES
         
 -------------------------------------------------------------------*/
 
-@import 'settings-panel.css';
-
 /* 1. GLOBAL STYLES */
 
 body {
@@ -4105,7 +4103,7 @@ button.close {
     position: relative;
     overflow: hidden;
     background:#fff;
-    top: 8vh;
+	padding-top:16vh;
 }
 
 .body.boxed {
@@ -5328,14 +5326,15 @@ label.css-label {
     width: 100%;
     text-align:left;
     z-index:999;
+	height: 7vh;
 }
 
 .headerBtn {
-	margin: -20px 5px 5px 5px;
+	margin: 5px;
 	float: right;
 }
 
 .headerBtnLeft {
-	margin: -20px 5px 5px 5px;
+	margin: 5px;
 	float: left;
 }
