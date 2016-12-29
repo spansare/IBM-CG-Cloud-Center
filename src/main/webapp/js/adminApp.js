@@ -38,7 +38,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 		$scope.assetAdminService.getAssetsbyCategory(categoryName)
 			.then(function(result) {
 			$scope.assetAdminService.assetList = result;
-			var url = "#getAssets";
+			var url = "#getAdminAssets";
 	    	$window.location.href = url;
 		});
 		
