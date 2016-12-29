@@ -154,6 +154,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 }]);
 
 
+
 adminApp.controller('assetManagementController', ['$rootScope', '$scope', '$http', '$q', '$window' , function ($rootScope, $scope, $http, $q, $window) {
 
 	var deferred = $q.defer();
