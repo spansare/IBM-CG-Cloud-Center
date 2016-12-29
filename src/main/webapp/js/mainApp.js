@@ -4,11 +4,11 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 	   $routeProvider.
 	   
 	   when('/getAssets', {
-	      templateUrl: 'asset.html', controller: 'assetController'
+	      templateUrl: 'assetView.html', controller: 'assetController'
 	   }).
 	   
 	   when('/catalog', {
-	      templateUrl: 'category.html', controller: 'categoryController'
+	      templateUrl: 'categoryView.html', controller: 'categoryController'
 	   }).
 	   
 	   otherwise({

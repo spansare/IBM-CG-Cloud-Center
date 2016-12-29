@@ -4,11 +4,19 @@ adminApp.config(['$routeProvider', function($routeProvider) {
 	   $routeProvider.
 	   
 	   when('/getAdminAssets', {
-	      templateUrl: 'admin_asset.html', controller: 'assetAdminController'
+	      templateUrl: 'admin_assetView.html', controller: 'assetAdminController'
 	   }).
 	   
 	   when('/adminCatalog', {
-	      templateUrl: 'admin_category.html', controller: 'categoryAdminController'
+	      templateUrl: 'admin_categoryView.html', controller: 'categoryAdminController'
+	   }).
+	   
+	   when('/createCategory', {
+	      templateUrl: 'createCategoryView.html', controller: 'categoryManagementController'
+	   }).
+	   
+	   when('/createAsset', {
+	      templateUrl: 'createAssetView.html', controller: 'assetManagementController'
 	   }).
 	   
 	   otherwise({
@@ -43,7 +51,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 		});
 		
 	}
-       
+	
 }]);
 
 
@@ -58,6 +66,75 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', 'a
     
 }]);
 
+
+adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$http', function ($rootScope, $scope, $http) {
+
+	$scope.category = {
+			category_name : "",
+			short_description : "",
+			long_description : "",
+			image_url : "",
+			result : false,
+			
+			createCategory : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/CategoryService/createCategory',
+	    			data : {
+	    				'name' : $scope.category.category_name,
+	    				'short_description' : $scope.category.short_description,
+	    				'long_description' : $scope.category.long_description,
+	    				'image_url' : $scope.category.image_url
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			$scope.result = data.result;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    		});
+			}
+	}
+    
+}]);
+
+
+adminApp.controller('assetManagementController', ['$rootScope', '$scope', '$http', function ($rootScope, $scope, $http) {
+
+	$scope.asset = {
+			name : "",
+			category : "",
+			short_description : "",
+			long_description : "",
+			image_url : "",
+			document_url : "",
+			demo_url : "",
+			result : false,
+			
+			createCategory : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/AssetService/createAsset',
+	    			data : {
+	    				'name' : $scope.asset.category_name,
+	    				'category' : $scope.asset.category,
+	    				'short_description' : $scope.asset.short_description,
+	    				'long_description' : $scope.asset.long_description,
+	    				'image_url' : $scope.asset.image_url,
+	    				'document_url' : $scope.asset.document_url,
+	    				'demo_url' : $scope.asset.demo_url
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			$scope.result = data.result;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    		});
+			}
+	}
+    
+}]);
 
     
 adminApp.service('assetAdminService', ['$http', '$q', function($http, $q) {
