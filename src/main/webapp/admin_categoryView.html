@@ -1,5 +1,45 @@
 <div class="body" style="padding-top: 50px;">
-
+	<div class="tb_right pull-right top-head-h3">
+		<button id="createCategoryBtn" onclick="showCategoryForm();" class="btn btn-primary">Add Category</button>
+		<button id="loginOutBtn" class="btn btn-primary">Logout</button>
+	</div>
+	<div id="categorycontainer" style="display:none;height: 600px;">
+		<form class="form-horizontal">
+			<h2>Eneter  Category Details</h2>
+			<div class="form-group">
+			  <label class="control-label col-sm-2" for="categoryName">Category Name</label>
+			  <div class="col-sm-7">
+				<input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="Enter Category Name">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label class="control-label col-sm-2" for="shortDesc">Category Short Description</label>
+			  <div class="col-sm-7">
+				<input type="text" class="form-control" id="shortDesc" name="shortDesc" placeholder="Enter Short Description for Category">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label class="control-label col-sm-2" for="longDesc">Category Detail Description</label>
+			  <div class="col-sm-7">
+				<input type="textarea" class="form-control" id="longDesc" name="longDesc" placeholder="Enter Detail Description for Category">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label class="control-label col-sm-2" for="imageUrl">Category Image URL</label>
+			  <div class="col-sm-7">
+				<input type="text" class="form-control" id="imageUrl" name="imageUrl" placeholder="Enter Image URL for Category">
+			  </div>
+			</div>
+			<div class="form-group">        
+			  <div class="col-sm-offset-3 col-sm-7">
+				<button type="submit" class="btn btn-default">Submit</button>
+				<button onclick="hideCategoryForm();" class="btn btn-default">Cancel</button>
+			  </div>
+			</div>
+		</form>
+	</div>
+	
+	
 	<div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 600px; overflow: hidden;">
 	
 	<!-- Loading Screen -->

@@ -172,3 +172,19 @@ adminApp.service('assetAdminService', ['$http', '$q', function($http, $q) {
     	  return this.assetList;
       }
 }]);
+
+function showCategoryForm(){
+		$('#categoryName').val('');
+		$('#shortDesc').val('');
+		$('#longDesc').val('');
+		$('#imageUrl').val('');
+        $('#categorycontainer').show();
+}
+
+function hideCategoryForm(){
+		$('#categoryName').val('');
+		$('#shortDesc').val('');
+		$('#longDesc').val('');
+		$('#imageUrl').val('');
+        $('#categorycontainer').hide();
+}
