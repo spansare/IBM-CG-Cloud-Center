@@ -9,30 +9,30 @@
 			<div class="form-group">
 			  <label class="control-label col-sm-2" for="categoryName">Category Name</label>
 			  <div class="col-sm-7">
-				<input type="text" class="form-control" id="categoryName" name="categoryName" placeholder="Enter Category Name">
+				<input type="text" class="form-control" id="categoryName" name="categoryName" ng-model="category.category_name" placeholder="Enter Category Name">
 			  </div>
 			</div>
 			<div class="form-group">
 			  <label class="control-label col-sm-2" for="shortDesc">Category Short Description</label>
 			  <div class="col-sm-7">
-				<input type="text" class="form-control" id="shortDesc" name="shortDesc" placeholder="Enter Short Description for Category">
+				<input type="text" class="form-control" id="shortDesc" name="shortDesc" ng-model="category.short_description" placeholder="Enter Short Description for Category">
 			  </div>
 			</div>
 			<div class="form-group">
 			  <label class="control-label col-sm-2" for="longDesc">Category Detail Description</label>
 			  <div class="col-sm-7">
-				<input type="textarea" class="form-control" id="longDesc" name="longDesc" placeholder="Enter Detail Description for Category">
+				<input type="textarea" class="form-control" id="longDesc" name="longDesc" ng-model="category.long_description" placeholder="Enter Detail Description for Category">
 			  </div>
 			</div>
 			<div class="form-group">
 			  <label class="control-label col-sm-2" for="imageUrl">Category Image URL</label>
 			  <div class="col-sm-7">
-				<input type="text" class="form-control" id="imageUrl" name="imageUrl" placeholder="Enter Image URL for Category">
+				<input type="text" class="form-control" id="imageUrl" name="imageUrl" ng-model="category.image_url" placeholder="Enter Image URL for Category">
 			  </div>
 			</div>
 			<div class="form-group">        
 			  <div class="col-sm-offset-3 col-sm-7">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default" ng-click="$scope.category.createCategory()">Submit</button>
 				<button onclick="hideCategoryForm();" class="btn btn-default">Cancel</button>
 			  </div>
 			</div>

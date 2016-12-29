@@ -67,8 +67,10 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', 'a
 }]);
 
 
-adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$http', function ($rootScope, $scope, $http) {
+adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$http', '$q', '$window', function ($rootScope, $scope, $http, $q, $window) {
 
+	var deferred = $q.defer();
+	
 	$scope.category = {
 			category_name : "",
 			short_description : "",
@@ -88,19 +90,27 @@ adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$h
 	    			}
 	    		}).success(function(data, status, headers, config) {
 	    			$scope.result = data.result;
+	    			deferred.resolve(data.result);
+	    			alert("Category created successfully!!!");
+	    			var url = "#adminCatalog";
+	    	    	$window.location.href = url;
 	    			
 	    		}).error(function(data, status, headers, config) {
 	    			// called asynchronously if an error occurs
 	    			// or server returns response with an error status.
 	    		});
+				
+				return deferred.promise;
 			}
 	}
     
 }]);
 
 
-adminApp.controller('assetManagementController', ['$rootScope', '$scope', '$http', function ($rootScope, $scope, $http) {
+adminApp.controller('assetManagementController', ['$rootScope', '$scope', '$http', '$q', '$window' , function ($rootScope, $scope, $http, $q, $window) {
 
+	var deferred = $q.defer();
+	
 	$scope.asset = {
 			name : "",
 			category : "",
@@ -125,12 +135,17 @@ adminApp.controller('assetManagementController', ['$rootScope', '$scope', '$http
 	    				'demo_url' : $scope.asset.demo_url
 	    			}
 	    		}).success(function(data, status, headers, config) {
-	    			$scope.result = data.result;
+	    			deferred.resolve(data.result);
+	    			alert("Asset created successfully!!!");
+	    			var url = "#getAdminAssets";
+	    	    	$window.location.href = url;
 	    			
 	    		}).error(function(data, status, headers, config) {
 	    			// called asynchronously if an error occurs
 	    			// or server returns response with an error status.
 	    		});
+				
+				return deferred.promise;
 			}
 	}
     
