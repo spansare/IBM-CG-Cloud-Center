@@ -26,9 +26,11 @@ adminApp.config(['$routeProvider', function($routeProvider) {
 	}]);
 
 
-adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http', '$window', 'assetAdminService', function ($rootScope, $scope, $http, $window, assetAdminService) {
+adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http', '$window', '$q', 'assetAdminService', function ($rootScope, $scope, $http, $window, $q, assetAdminService) {
 
 	$scope.assetAdminService = assetAdminService;   
+	var deferred = $q.defer();
+	$scope.showForm = false;
    
 	$http({
 		method : 'GET',
@@ -52,6 +54,39 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 		
 	}
 	
+	$scope.category = {
+			category_name : "",
+			short_description : "",
+			long_description : "",
+			image_url : "",
+			result : false,
+			
+			createCategory : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/CategoryService/createCategory',
+	    			data : {
+	    				'name' : $scope.category.category_name,
+	    				'short_description' : $scope.category.short_description,
+	    				'long_description' : $scope.category.long_description,
+	    				'image_url' : $scope.category.image_url
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			$scope.result = data.result;
+	    			deferred.resolve(data.result);
+	    			alert("Category created successfully!!!");
+	    			var url = "#adminCatalog";
+	    	    	$window.location.href = url;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    		});
+				
+				return deferred.promise;
+			}
+	}
+	
 }]);
 
 
@@ -70,6 +105,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', 'a
 adminApp.controller('categoryManagementController', ['$rootScope', '$scope', '$http', '$q', '$window', function ($rootScope, $scope, $http, $q, $window) {
 
 	var deferred = $q.defer();
+	$scope.showForm = false;
 	
 	$scope.category = {
 			category_name : "",
