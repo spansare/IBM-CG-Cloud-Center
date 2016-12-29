@@ -101,14 +101,14 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	$scope.assetList = $scope.assetAdminService.getAssets();
 	
 	var deferred = $q.defer();
-	$scope.showCreateAssetForm = false;
+	$scope.showAssetForm = false;
 	
 	$scope.showCreateAssetForm = function() {
-		$scope.showCreateAssetForm = true;
+		$scope.showAssetForm = true;
 	}
 	
 	$scope.hideCreateAssetForm = function() {
-		$scope.showCreateAssetForm = false;
+		$scope.showAssetForm = false;
 	}
 	
 	$scope.asset = {
