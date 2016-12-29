@@ -5316,3 +5316,26 @@ label.css-label {
     background:rgba(0,0,0,1);
     text-decoration:none;
 }
+
+.top-head-h3 {
+    background: #ffd;
+    border-bottom: solid 2px #009dd2;
+    color: #009dd2;
+    font-size: 34px;
+    font-weight: 300;
+    position: fixed;
+    top: 8vh;
+    width: 100%;
+    text-align:left;
+    z-index:999;
+}
+
+.headerBtn {
+	margin: -20px 5px 5px 5px;
+	float: right;
+}
+
+.headerBtnLeft {
+	margin: -20px 5px 5px 5px;
+	float: left;
+}

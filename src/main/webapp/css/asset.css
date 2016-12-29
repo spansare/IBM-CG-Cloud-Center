@@ -1431,22 +1431,4 @@ only screen and (                min-resolution: 2dppx) {
         position: absolute;
     }
 }
-.top-head-h3 {
-    background: #ffd;
-    border-bottom: solid 2px #009dd2;
-    color: #009dd2;
-    font-size: 34px;
-    font-weight: 300;
-    position: fixed;
-    top: 8vh;
-    width: 100%;
-    text-align:left;
-    z-index:999;
-}
 
-.headerBtn {
-	margin-top: -20px;
-	margin-left: 5px;
-	margin-right: 5px;
-	float: right;
-}

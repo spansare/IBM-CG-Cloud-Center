@@ -95,7 +95,6 @@
 				<div class="tb_center pull-left">
 					Center Header Text
 				</div>
-
             </div>
         </nav>
 		

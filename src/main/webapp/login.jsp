@@ -104,8 +104,8 @@
 				<div class="tb_center pull-left">
 					Center Header Text
 				</div>
-				<div class="tb_right pull-right" style="padding-left:10px;padding-top:10px;">
-					<button id="homeBtn" class="btn btn-primary" data-popup-open="popup-1">Home</button>
+				<div class="tb_right pull-right">
+					<button id="homeBtn" class="btn btn-primary headerBtn">Home</button>
 				</div>
 			</div>
 		</nav>
