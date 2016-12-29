@@ -54,6 +54,14 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 		
 	}
 	
+	$scope.showAddCategoryForm = function() {
+		$scope.showForm = true;
+	}
+	
+	$scope.hideAddCategoryForm = function() {
+		$scope.showForm = false;
+	}
+	
 	$scope.category = {
 			category_name : "",
 			short_description : "",
@@ -224,18 +232,3 @@ adminApp.service('assetAdminService', ['$http', '$q', function($http, $q) {
       }
 }]);
 
-function showCategoryForm(){
-		$('#categoryName').val('');
-		$('#shortDesc').val('');
-		$('#longDesc').val('');
-		$('#imageUrl').val('');
-        $('#categorycontainer').show();
-}
-
-function hideCategoryForm(){
-		$('#categoryName').val('');
-		$('#shortDesc').val('');
-		$('#longDesc').val('');
-		$('#imageUrl').val('');
-        $('#categorycontainer').hide();
-}
