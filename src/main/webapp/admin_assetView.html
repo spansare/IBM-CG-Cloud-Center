@@ -1,4 +1,55 @@
-<h3 class="top-head-h3">{{categoryName}}</h3>
+<div class="tb_right pull-right top-head-h3">
+	<h3>{{categoryName}}</h3>
+	<button id="loginOutBtn" class="btn btn-primary headerBtn">Logout</button>
+	<button id="createAssetBtn" onclick="showAssetForm();" class="btn btn-primary headerBtn">Add Asset</button>
+</div>
+<div id="assetcontainer" style="display:none;height: 600px;">
+<form class="form-horizontal">
+	<h2>Enter  Asset Details</h2>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="assetName">Asset Name</label>
+	  <div class="col-sm-7">
+		<input type="text" class="form-control" id="assetName" name="assetName" placeholder="Enter Asset Name">
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="shortAssetDesc">Asset Short Description</label>
+	  <div class="col-sm-7">
+		<input type="text" class="form-control" id="shortAssetDesc" name="shortAssetDesc" placeholder="Enter Short Description for Asset">
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="longAssetDesc">Asset Detail Description</label>
+	  <div class="col-sm-7">
+		<input type="textarea" class="form-control" id="longAssetDesc" name="longAssetDesc" placeholder="Enter Detail Description for Asset">
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="imageUrl">Asset Image URL</label>
+	  <div class="col-sm-7">
+		<input type="text" class="form-control" id="imageUrl" name="imageUrl" placeholder="Enter Image URL for Asset">
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="docUrl">Asset Document URL</label>
+	  <div class="col-sm-7">
+		<input type="text" class="form-control" id="docUrl" name="docUrl" placeholder="Enter Image URL for Asset">
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label class="control-label col-sm-2" for="demoUrl">Asset Demo URL</label>
+	  <div class="col-sm-7">
+		<input type="text" class="form-control" id="demoUrl" name="demoUrl" placeholder="Enter Demo URL for Asset">
+	  </div>
+	</div>
+	<div class="form-group">        
+	  <div class="col-sm-offset-3 col-sm-7">
+		<button type="submit" class="btn btn-default">Submit</button>
+		<button onclick="hideAssetForm();" class="btn btn-default">Cancel</button>
+		  </div>
+		</div>
+	</form>
+</div>
 <div class="container12" ng-repeat="asset in assetList">
 	<div class="column10 prefix1">
 		<h3>{{asset.asset_title}}</h3>
