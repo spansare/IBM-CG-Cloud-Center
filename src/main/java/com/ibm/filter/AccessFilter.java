@@ -26,7 +26,7 @@ public class AccessFilter implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 	    PrintWriter out=res.getWriter();  
-	    out.print("access filter is invoked");  
+	    System.out.print("access filter is invoked");  
 	    
 	    HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
