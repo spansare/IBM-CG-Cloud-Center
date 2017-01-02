@@ -231,7 +231,6 @@ header {
     display: block;
     width: 100%;
     position: relative;
-    overflow: hidden;
     cursor: pointer;
     padding: 10px;
 }
@@ -247,6 +246,11 @@ header {
 .block-content img {
     opacity: 1;
     transition: 0.3s;
+	height:350px;
+}
+
+.block-content:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .block-content:hover img {
@@ -1339,7 +1343,7 @@ footer {
 /* 14. FOOTER / COPYRIGHT */
 
 .footer-bottom {
-    background: #131313;
+    background: #152935;
     padding: 3px 0;
 }
 
@@ -1356,7 +1360,7 @@ footer {
 
 .flinks li::after {
     content: "|";
-    color: #555;
+    color: #152935;
     position: relative;
     right: -6px;
 }
@@ -5332,9 +5336,90 @@ label.css-label {
 .headerBtn {
 	margin: 5px;
 	float: right;
+	border-radius:0px
 }
 
 .headerBtnLeft {
 	margin: 5px;
 	float: left;
+	border-radius:0px
+}
+
+.headerBtnLogin {
+	margin: 5px;
+	float: right;
+	border-radius:0px;
+	margin-top:9px;
+	margin-right:9px;
+}
+.headerBtnLogin:hover {
+	color:#286090;
+	background-color:#fff;
+}
+
+.headerClass {
+	height:8vh;
+	width:100%;
+	background-color:#152935;
+	background-image:linear-gradient(141deg, #152935 0%, #152935 51%, #3b5998 95%);
+	border-bottom:1px solid #152935;
+	min-height:42px;
+}
+
+.bottomClass {
+	background-color:#152935;
+	background-image:linear-gradient(141deg,#3b5998 0%, #152935 51%, #152935 95%);
+	border-bottom:1px solid #152935;
+	min-height:42px;
+}
+
+.logoImg {
+	height: 20px;
+}
+
+.topBarLogoImg {
+	padding-left:5px;
+	height: 25px;
+}
+
+/* Tooltip text */
+.tooltip_ > .tooltiptext_ {
+    visibility: hidden;
+    width: 100%;
+	border:2px solid black;
+	background: rgba(255, 255, 255, 1);
+    color: #152935;
+    text-align: center;
+    padding: 10px;
+    border-radius: 0px;
+	text-transform: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:normal;
+	font-size:14px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 999;
+	overflow:visible;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip_:hover .tooltiptext_ {
+    visibility: visible;
+}
+
+.headerLogoText {
+	font-size:17px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	font-weight:400;
+	cursor:pointer;
+	text-decoration:none;
+	text-transform: none;
+	color:#fff;
+	padding-top:5px;
+	padding-left:8px;
+}
+
+.headerLogoText:hover {
+	color:#7cc7ff;
 }

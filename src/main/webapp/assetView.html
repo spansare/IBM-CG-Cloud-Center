@@ -1,7 +1,14 @@
 <div class="top-head-h3">
-	<button id="homeBtn" class="btn btn-primary headerBtnLeft">Home</button>
-	<h3 style="text-align:center;">{{categoryName}}</h3>
-	<button id="loginBtn" class="btn btn-primary headerBtn" style="margin-top:-20px;">Login</button>
+	<div class="pull-left">
+		<button id="homeBtn" class="btn btn-primary headerBtnLeft">Home</button>
+	</div>
+	<div class="pull-center">
+		<h3 style="text-align:center;padding-top:6px;color:#152935;">{{categoryName}}</h3>
+	</div>
+	<div class="pull-right">
+		<button id="loginBtn" class="btn btn-primary headerBtn" style="margin-top:-26px;">Login</button>
+	</div>
+		
 </div>
 <div class="body">
 	<div class="container12" ng-repeat="asset in assetList">

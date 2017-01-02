@@ -2,7 +2,7 @@
 	<button id="loginBtn" class="btn btn-primary headerBtn">Login</button>
 </div>
 <div class="body">
-	<div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 600px; overflow: hidden;">
+	<div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 500px; height: 200px; overflow: hidden;align:center;">
 	
 	<!-- Loading Screen -->
 	<div u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -13,7 +13,7 @@
 	</div>
 	
 	<!-- Slides Container -->
-	<div u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 600px; overflow: hidden;">
+	<div u="slides" style="position: relative; left: 0px; top: 0px; width: 500px; height: 200px; overflow: hidden;">
 		<div>
 			<img u="image" src2="images/red.jpg" />
 		</div>
@@ -38,8 +38,6 @@
 	<!-- Arrow Right -->
 	<span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
 	</span>
-	<!--#endregion Arrow Navigator Skin End -->
-	<a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
 	</div>
 
 	<!-- BLOCKS WRAP -->
@@ -48,8 +46,9 @@
 			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList">
 				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
 					<img src={{category.image_url}} class="img-responsive" alt="" />
-					<div class="bs-text-down text-center hvr-outline-out">
-						{{category.category_name}}<span>{{category.short_description}}</span>				
+					<div class="bs-text-down text-center hvr-outline-out tooltip_">
+						{{category.category_name}}
+						<div class="tooltiptext_">{{category.short_description}}</div>
 					</div>
 				</div>
 			</div>

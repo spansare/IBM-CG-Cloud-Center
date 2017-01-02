@@ -97,53 +97,53 @@
     </head>
     <body>
 		<nav class="navbar navbar-fixed-top">
-			<div style="background-color: yellow;height:8vh;width:100%;">
-				<div class="tb_left pull-left">
-					Image Place Holder
+            <div class="headerClass">
+                <div class="tb_left pull-left">
+                	<img class="topBarLogoImg" src="images/IBM_Bluemix_logo.png" />
 				</div>
-				<div class="tb_center pull-left">
-					Center Header Text
+				<div class="tb_left pull-left">
+					<h1 class="headerLogoText" style="margin-top:0px;">IBM Capgemini Cloud Center</h1>
 				</div>
 				<div class="tb_right pull-right">
-					<button id="homeBtn" class="btn btn-primary headerBtn">Home</button>
+					<button id="homeBtn" class="btn btn-primary headerBtnLogin">Home</button>
 				</div>
-			</div>
-		</nav>
+            </div>
+        </nav>
 		<div class="login-screen">
 			<div class="login-stage hidden-ph" style="height:92vh;">
 				<div class="login-welcome" id="login-welcome-1" style="display:none;">
-					<a href="http://www.ssctech.com/pdf/articles/GC_1603_SSC_Reprint.pdf?track=84" target="_blank">
+					<a href="https://bluemix.net" target="_blank">
 						<span class="login-heading">In The News: Global Custodian - Scaling Forward</span>
-						<span class="login-sub-heading">Fund administrators need scale to help hedge funds through a tough period, says SS&C’s new SVP Stephanie Miller.</span>
+						<span class="login-sub-heading">Fund administrators need scale to help hedge funds through a tough period.</span>
 					</a>
 
 				</div>
 				<div class="login-welcome" id="login-welcome-2" style="display:none;">
-					<a href="http://www.ssctech.com/pdf/articles/PEI_FATS2016.pdf?track=80" target="_blank">
+					<a href="https://bluemix.net" target="_blank">
 						<span class="login-heading">In The News: PEI - The Fund Administration & Technology Special 2016</span>
-						<span class="login-sub-heading">Today’s fund administrators can play a vital role as GPs move into new geographies, new asset classes and larger funds under the watchful eye of regulators around the world, says Joe Patellaro.</span>
+						<span class="login-sub-heading">Today’s fund administrators can play a vital role as GPs move into new geographies, new asset classes and larger funds under the watchful eye of regulators around the world.</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-3" style="display:none;">
-					<a href="http://www.ssctech.com/contactus/downloadresource.aspx?ty=whitepaper&rid=114" target="_blank">
+					<a href="https://bluemix.net" target="_blank">
 						<span class="login-heading">Strategies For Competing in the Digital Age</span>
-						<span class="login-sub-heading">Digitalization is changing the rules for asset management. SS&C explores six trends affecting competition in the digital age.</span>
+						<span class="login-sub-heading">Digitalization is changing the rules for asset management.</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-4" style="display:none;">
-					<a href="http://www.ssctech.com/contactus/downloadresource.aspx?ty=whitepaper&rid=91" target="_blank">
+					<a href="https://bluemix.net" target="_blank">
 						<span class="login-heading">CRM II: Finding a Flexible Solution in the Compliance Era</span>
 						<span class="login-sub-heading">In light of forthcoming changes from CRM II, consider rethinking your compliance strategy as an opportunity for operational enhancement.</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-5" style="display:none;">
-					<a href="http://www.ssctech.com/contactus/downloadresource.aspx?ty=whitepaper&rid=98" target="_blank">
+					<a href="https://bluemix.net" target="_blank">
 						<span class="login-heading">Performance Best Practices: Achieving Transparency Across the Stakeholder Spectrum</span>
-						<span class="login-sub-heading">Performance Measurement has become a key priority for asset management firms. SS&C explores how organizations can meet the increased demand for transparency.</span>
+						<span class="login-sub-heading">Performance Measurement has become a key priority for asset management firms.</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-6" style="display:none;">
-					<a href="https://www.youtube.com/embed/CgGcIOpyQco?rel=0" target="_blank">
+					<a href="https://bluemix.net" target="_blank">
 						<span class="login-heading">The Future Of Fund Administration Is Here</span>
 						<span class="login-sub-heading">Watch the video.</span>
 					</a>
@@ -176,20 +176,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="footer-bottom" style="height:8vh;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7 col-sm-7">
-						<ul class="flinks">
-							<li><a href="./index.html">Site Map</a></li>
-							<li><a href="./index.html">Search Terms</a></li>
-						</ul>
-						<br>
-						<p>Copyright 2017 · Designed &amp; Developed by <a href="#">jThemes Studio.</a> All rights reserved</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!-- FOOTER COPYRIGHT -->
+        <div class="footer-bottom bottomClass" style="height:8vh;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-sm-7">
+                        <ul class="flinks">
+                            <li><a href="https://bluemix.net" target="_blank"><img class="logoImg" src="images/IBM_Bluemix_logo.png" /></a></li>
+                            <li><a href="https://bluemix.net" target="_blank">Powered by IBM Bluemix</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 		<div id="large" class="hidden-md hidden-sm hidden-xs"></div>
