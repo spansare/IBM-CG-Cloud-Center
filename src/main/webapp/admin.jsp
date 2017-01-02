@@ -88,7 +88,7 @@
         <div id="loader" style="display: none;"></div>
         <!-- HEADER -->
         <nav class="navbar navbar-fixed-top">
-            <div style="background-color: yellow;height:8vh;width:100%;">
+            <div style="background-color: navy;height:8vh;width:100%;">
                 <div class="tb_left pull-left">
                 	Image Place Holder
 				</div>
@@ -110,7 +110,7 @@
                             <li><a href="./index.html">Search Terms</a></li>
                         </ul>
                         <br>
-                        <p>Copyright 2017 · Designed &amp; Developed by <a href="#">jThemes Studio.</a> All rights reserved</p>
+                        <p>Powered by Bluemix</p>
                     </div>
                 </div>
             </div>
