@@ -21,7 +21,7 @@ adminApp.config(['$routeProvider', function($routeProvider) {
 adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http', '$window', '$q', 'assetAdminService', function ($rootScope, $scope, $http, $window, $q, assetAdminService) {
 
 	$scope.assetAdminService = assetAdminService;  
-	$scope.categoryTypes = ["Generic" , "Indistry" , "Technology"];
+	$scope.categoryTypes = ["Generic" , "Industry" , "Technology"];
 	var deferred = $q.defer();
 	$scope.showCreateCategory = false;
 	$scope.showUpdateCategory = false;
@@ -133,7 +133,19 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	    		});
 				
 				return deferred.promise;
-			}			
+			},
+			
+			updateView : function() {
+				 angular.forEach($scope.categoryList, function(item){
+	                   console.log(item.category_name);  
+	                   if(angular.equals($scope.category.category_name, item.category_name)) {
+	                	   $scope.category.short_description = item.short_description;
+	                	   $scope.category.long_description = item.long_description;
+	                	   $scope.category.image_url = item.images_url;
+	                	   $scope.category.category_type = item.category_type;
+	                   }
+	               })
+			}
 			
 	}
 	
