@@ -32,6 +32,15 @@
 				<input type="text" class="form-control" id="imageUrl" name="imageUrl" ng-model="category.image_url" placeholder="Enter Image URL for Category">
 			  </div>
 			</div>
+			<div class="form-group">
+			  <label for="selcategory">Category Type</label>
+			  <select class="form-control" id="selcategory" ng-model="category.category_type">
+			    <option>1</option>
+			    <option>2</option>
+			    <option>3</option>
+			    <option>4</option>
+			  </select>
+			</div>
 			<div class="form-group">        
 			  <div class="col-sm-offset-3 col-sm-7">
 				<button type="submit" class="btn btn-default" ng-click="category.createCategory()">Submit</button>
