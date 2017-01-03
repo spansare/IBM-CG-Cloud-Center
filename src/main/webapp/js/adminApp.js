@@ -20,7 +20,8 @@ adminApp.config(['$routeProvider', function($routeProvider) {
 
 adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http', '$window', '$q', 'assetAdminService', function ($rootScope, $scope, $http, $window, $q, assetAdminService) {
 
-	$scope.assetAdminService = assetAdminService;   
+	$scope.assetAdminService = assetAdminService;  
+	$scope.categoryTypes = ["Generic" , "Indistry" , "Technology"];
 	var deferred = $q.defer();
 	$scope.showCreateCategory = false;
 	$scope.showUpdateCategory = false;
