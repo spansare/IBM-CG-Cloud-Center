@@ -53,6 +53,7 @@ public class CategoryController {
 			category.setShort_description(json.getString("short_description"));
 			category.setLong_description(json.getString("long_description"));
 			category.setImage_url(json.getString("image_url"));
+			category.setCategory_type(json.getString("category_type"));
 			
 			boolean res = catDao.createCategory(category);
 			
@@ -65,6 +66,64 @@ public class CategoryController {
 			e.printStackTrace();
 		}
 		
+		return result;
+	}
+	
+	@POST
+	@Path("/updateCategory")
+	@Produces("text/plain")
+	@Consumes("application/json")
+	public String updateCategory(String input) {
+		String result = new String();
+		
+		try {
+			JSONObject json = new JSONObject(input);
+			CategoryDAO catDao = new CategoryDAO();
+			Category category = new Category();
+			
+			category.setCategory_name(json.getString("name"));
+			category.setShort_description(json.getString("short_description"));
+			category.setLong_description(json.getString("long_description"));
+			category.setImage_url(json.getString("image_url"));
+			category.setCategory_type(json.getString("category_type"));
+			
+			boolean res = catDao.updateCategory(category);
+			
+			if(res)
+				result = "Category updated successfully!!!";
+			else
+				result = "Category update failed. Check logs for more details.";
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	@POST
+	@Path("/deleteCategory")
+	@Produces("text/plain")
+	@Consumes("application/json")
+	public String deleteCategory(String input) {
+		String result = new String();
+		
+		try {
+			JSONObject json = new JSONObject(input);
+			CategoryDAO catDao = new CategoryDAO();
+			
+			String category_name = json.getString("name");
+			
+			boolean res = catDao.deleteCategory(category_name);
+			
+			if(res)
+				result = "Category deleted successfully!!!";
+			else
+				result = "Category deletion failed. Check logs for more details.";
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return result;
 	}

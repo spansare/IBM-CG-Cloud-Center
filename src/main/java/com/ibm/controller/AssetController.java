@@ -32,7 +32,7 @@ public class AssetController {
 		List<Asset> assets = assetDao.getAssetsByCategory(json.getString("category"));
 		assetJson = assetJson.put("result", assets);
 		result = assetJson.toString();
-		System.out.println("Snehal : " + result);
+		System.out.println("Result  /getAssets: " + result);
         return result;
         
 	}
@@ -41,7 +41,7 @@ public class AssetController {
 	@Path("/createAsset")
 	@Produces("text/plain")
 	@Consumes("application/json")
-	public String createCategory(String input) {
+	public String createAsset(String input) {
 		String result = new String();
 		
 		try {
@@ -56,6 +56,8 @@ public class AssetController {
 			asset.setImage_url(json.getString("image_url"));
 			asset.setDocument_url(json.getString("document_url"));
 			asset.setDemo_url(json.getString("demo_url"));
+			asset.setOwner(json.getString("owner"));
+			asset.setBusiness_unit(json.getString("business_unit"));
 			
 			boolean res = assetDao.createAsset(asset);
 			
@@ -63,6 +65,70 @@ public class AssetController {
 				result = "Asset created successfully!!!";
 			else
 				result = "Asset creation failed. Check logs for more details.";
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return result;
+	}
+	
+	@POST
+	@Path("/updateAsset")
+	@Produces("text/plain")
+	@Consumes("application/json")
+	public String updateAsset(String input) {
+		String result = new String();
+		
+		try {
+			JSONObject json = new JSONObject(input);
+			AssetDAO assetDao = new AssetDAO();
+			Asset asset = new Asset();
+			
+			asset.setAsset_title(json.getString("name"));
+			asset.setCategory(json.getString("category"));
+			asset.setShort_description(json.getString("short_description"));
+			asset.setLong_description(json.getString("long_description"));
+			asset.setImage_url(json.getString("image_url"));
+			asset.setDocument_url(json.getString("document_url"));
+			asset.setDemo_url(json.getString("demo_url"));
+			asset.setOwner(json.getString("owner"));
+			asset.setBusiness_unit(json.getString("business_unit"));
+			
+			boolean res = assetDao.updateAsset(asset);
+			
+			if(res)
+				result = "Asset updated successfully!!!";
+			else
+				result = "Asset update failed. Check logs for more details.";
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return result;
+	}
+	
+	@POST
+	@Path("/deleteAsset")
+	@Produces("text/plain")
+	@Consumes("application/json")
+	public String deleteAsset(String input) {
+		String result = new String();
+		
+		try {
+			JSONObject json = new JSONObject(input);
+			AssetDAO assetDao = new AssetDAO();
+			String asset_title = json.getString("name");
+			
+			boolean res = assetDao.deleteAsset(asset_title);
+			
+			if(res)
+				result = "Asset deleted successfully!!!";
+			else
+				result = "Asset deletion failed. Check logs for more details.";
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

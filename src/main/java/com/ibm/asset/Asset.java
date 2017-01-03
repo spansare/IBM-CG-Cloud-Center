@@ -5,6 +5,8 @@ public class Asset {
 	private String category;
 	private String short_description;
 	private String long_description;
+	private String owner;
+	private String business_unit;
 	private String image_url;
 	private String document_url;
 	private String demo_url;
@@ -13,7 +15,7 @@ public class Asset {
 		
 	}
 	
-	public Asset(String asset_title, String category, String short_description, String long_description, String image_url, String document_url, String demo_url) {
+	public Asset(String asset_title, String category, String short_description, String long_description, String image_url, String document_url, String demo_url, String owner, String business_unit) {
 		this.asset_title = asset_title;
 		this.category = category;
 		this.short_description = short_description;
@@ -21,6 +23,8 @@ public class Asset {
 		this.image_url = image_url;
 		this.document_url = document_url;
 		this.demo_url = demo_url;
+		this.owner = owner;
+		this.business_unit = business_unit;
 	}
 
 	public String getAsset_title() {
@@ -53,6 +57,22 @@ public class Asset {
 
 	public void setLong_description(String long_description) {
 		this.long_description = long_description;
+	}
+
+	public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+
+	public String getBusiness_unit() {
+		return business_unit;
+	}
+
+	public void setBusiness_unit(String business_unit) {
+		this.business_unit = business_unit;
 	}
 
 	public String getImage_url() {

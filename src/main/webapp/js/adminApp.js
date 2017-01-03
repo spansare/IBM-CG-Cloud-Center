@@ -22,7 +22,9 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 
 	$scope.assetAdminService = assetAdminService;   
 	var deferred = $q.defer();
-	$scope.showForm = false;
+	$scope.showCreateCategory = false;
+	$scope.showUpdateCategory = false;
+	$scope.showDeleteCategory = false;
    
 	$http({
 		method : 'GET',
@@ -47,11 +49,27 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	}
 	
 	$scope.showAddCategoryForm = function() {
-		$scope.showForm = true;
+		$scope.showCreateCategory = true;
 	}
 	
 	$scope.hideAddCategoryForm = function() {
-		$scope.showForm = false;
+		$scope.showCreateCategory = false;
+	}
+	
+	$scope.showUpdateCategoryForm = function() {
+		$scope.showUpdateCategory = true;
+	}
+	
+	$scope.hideUpdateCategoryForm = function() {
+		$scope.showUpdateCategory = false;
+	}
+	
+	$scope.showDeleteCategoryForm = function() {
+		$scope.showDeleteCategory = true;
+	}
+	
+	$scope.hideDeleteCategoryForm = function() {
+		$scope.showDeleteCategory = false;
 	}
 	
 	$scope.category = {
@@ -134,6 +152,8 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 			category : "",
 			short_description : "",
 			long_description : "",
+			owner : "",
+			business_unit : "",
 			image_url : "",
 			document_url : "",
 			demo_url : "",
@@ -148,6 +168,8 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	    				'category' : $scope.categoryName,
 	    				'short_description' : $scope.asset.short_description,
 	    				'long_description' : $scope.asset.long_description,
+	    				'owner' : $scope.asset.owner,
+	    				'business_unit' : $scope.asset.business_unit,
 	    				'image_url' : $scope.asset.image_url,
 	    				'document_url' : $scope.asset.document_url,
 	    				'demo_url' : $scope.asset.demo_url

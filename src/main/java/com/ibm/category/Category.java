@@ -6,16 +6,18 @@ public class Category {
 	private String short_description;
 	private String long_description;
 	private String image_url;
+	private String category_type;
 	
 	public Category() {
 		
 	}
 	
-	public Category(String catname, String short_desc, String long_desc, String img_url) {
+	public Category(String catname, String short_desc, String long_desc, String img_url, String category_type) {
 		this.category_name = catname;
 		this.short_description = short_desc;
 		this.long_description = long_desc;
 		this.image_url = img_url;
+		this.category_type = category_type;
 	}
 
 	public String getCategory_name() {
@@ -48,5 +50,13 @@ public class Category {
 
 	public void setImage_url(String image_url) {
 		this.image_url = image_url;
+	}
+
+	public String getCategory_type() {
+		return category_type;
+	}
+
+	public void setCategory_type(String category_type) {
+		this.category_type = category_type;
 	}
 }
