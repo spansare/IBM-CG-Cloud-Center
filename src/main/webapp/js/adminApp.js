@@ -77,6 +77,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 			short_description : "",
 			long_description : "",
 			image_url : "",
+			category_type : "",
 			result : false,
 			
 			createCategory : function() {
@@ -87,7 +88,8 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	    				'name' : $scope.category.category_name,
 	    				'short_description' : $scope.category.short_description,
 	    				'long_description' : $scope.category.long_description,
-	    				'image_url' : $scope.category.image_url
+	    				'image_url' : $scope.category.image_url,
+	    				'category_type' : $scope.category.category_type
 	    			}
 	    		}).success(function(data, status, headers, config) {
 	    			$scope.result = data.result;
@@ -103,7 +105,35 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	    		});
 				
 				return deferred.promise;
-			}
+			},
+			
+			updateCategory : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/CategoryService/updateCategory',
+	    			data : {
+	    				'name' : $scope.category.category_name,
+	    				'short_description' : $scope.category.short_description,
+	    				'long_description' : $scope.category.long_description,
+	    				'image_url' : $scope.category.image_url,
+	    				'category_type' : $scope.category.category_type
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			$scope.result = data.result;
+	    			deferred.resolve(data.result);
+	    			alert("Category created successfully!!!");
+	    			var url = "#adminCatalog";
+	    	    	$window.location.href = url;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    			alert("Failed to create Category.");
+	    		});
+				
+				return deferred.promise;
+			}			
+			
 	}
 	
 }]);
@@ -157,6 +187,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 			image_url : "",
 			document_url : "",
 			demo_url : "",
+			
 			result : false,
 			
 			createAsset : function() {
@@ -172,11 +203,41 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	    				'business_unit' : $scope.asset.business_unit,
 	    				'image_url' : $scope.asset.image_url,
 	    				'document_url' : $scope.asset.document_url,
-	    				'demo_url' : $scope.asset.demo_url
+	    				'demo_url' : $scope.asset.demo_url,
 	    			}
 	    		}).success(function(data, status, headers, config) {
 	    			deferred.resolve(data.result);
 	    			alert("Asset created successfully!!!");
+	    			var url = "#getAdminAssets";
+	    	    	$window.location.href = url;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    			alert("Failed to create Asset.");
+	    		});
+				
+				return deferred.promise;
+			},
+			
+			updateAsset : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/AssetService/updateAsset',
+	    			data : {
+	    				'name' : $scope.asset.name,
+	    				'category' : $scope.categoryName,
+	    				'short_description' : $scope.asset.short_description,
+	    				'long_description' : $scope.asset.long_description,
+	    				'owner' : $scope.asset.owner,
+	    				'business_unit' : $scope.asset.business_unit,
+	    				'image_url' : $scope.asset.image_url,
+	    				'document_url' : $scope.asset.document_url,
+	    				'demo_url' : $scope.asset.demo_url,
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			deferred.resolve(data.result);
+	    			alert("Asset updated successfully!!!");
 	    			var url = "#getAdminAssets";
 	    	    	$window.location.href = url;
 	    			
