@@ -101,14 +101,32 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	$scope.assetList = $scope.assetAdminService.getAssets();
 	
 	var deferred = $q.defer();
-	$scope.showAssetForm = false;
+	$scope.showCreateAsset = false;
+	$scope.showUpdateAsset = false;
+	$scope.showDeleteAsset = false;
 	
 	$scope.showCreateAssetForm = function() {
-		$scope.showAssetForm = true;
+		$scope.showCreateAsset = true;
 	}
 	
 	$scope.hideCreateAssetForm = function() {
-		$scope.showAssetForm = false;
+		$scope.showCreateAsset = false;
+	}
+	
+	$scope.showUpdateAssetForm = function() {
+		$scope.showUpdateAsset = true;
+	}
+	
+	$scope.hideUpdateAssetForm = function() {
+		$scope.showUpdateAsset = false;
+	}
+	
+	$scope.showDeleteAssetForm = function() {
+		$scope.showDeleteAsset = true;
+	}
+	
+	$scope.hideDeleteAssetForm = function() {
+		$scope.showDeleteAsset = false;
 	}
 	
 	$scope.asset = {
