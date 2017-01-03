@@ -141,8 +141,9 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	                   if(angular.equals($scope.category.category_name, item.category_name)) {
 	                	   $scope.category.short_description = item.short_description;
 	                	   $scope.category.long_description = item.long_description;
-	                	   $scope.category.image_url = item.images_url;
+	                	   $scope.category.image_url = item.image_url;
 	                	   $scope.category.category_type = item.category_type;
+	                	   return;
 	                   }
 	               })
 			}
@@ -261,6 +262,23 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	    		});
 				
 				return deferred.promise;
+			},
+			
+			updateView : function() {
+				 angular.forEach($scope.assetList, function(item){
+	                   console.log(item.asset_title);  
+	                   if(angular.equals($scope.asset.asset_title, item.asset_title)) {
+	                	   $scope.asset.short_description = item.short_description;
+	                	   $scope.asset.long_description = item.long_description;
+	                	   $scope.asset.image_url = item.image_url;
+	                	   $scope.asset.category = item.category;
+	                	   $scope.asset.owner = item.owner;
+	                	   $scope.asset.business_unit = item.business_unit;
+	                	   $scope.asset.document_url = item.document_url;
+	                	   $scope.asset.demo_url = item.demo_url;
+	                	   return;
+	                   }
+	               })
 			}
 	}
 	
