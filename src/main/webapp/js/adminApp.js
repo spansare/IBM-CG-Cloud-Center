@@ -225,8 +225,8 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 			owner : "",
 			business_unit : "",
 			image_url : "",
-			document_url : "",
-			demo_url : "",
+			document_url : null,
+			demo_url : null,
 			
 			result : false,
 			

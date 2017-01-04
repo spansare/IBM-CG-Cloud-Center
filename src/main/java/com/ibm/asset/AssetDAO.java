@@ -96,7 +96,7 @@ public class AssetDAO {
 		boolean result = false;
 		
 		try {
-			preparedStatement = (PreparedStatement) connection.prepareStatement("update " + tableName + " set category=?, short_description=?, long_description=?, image_url=?, document_url=?, demo_url=?, owner=?, business_unit=? where asset_tile=?");
+			preparedStatement = (PreparedStatement) connection.prepareStatement("update " + tableName + " set category=?, short_description=?, long_description=?, image_url=?, document_url=?, demo_url=?, owner=?, business_unit=? where asset_title=?");
 			
 			preparedStatement.setString(1, asset.getCategory());
 			preparedStatement.setString(2, asset.getShort_description());
