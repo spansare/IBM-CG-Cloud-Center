@@ -113,6 +113,7 @@ public class CategoryController {
 			CategoryDAO catDao = new CategoryDAO();
 			
 			String category_name = json.getString("name");
+			System.out.println("Category to be deleted  : " + category_name);
 			
 			boolean res = catDao.deleteCategory(category_name);
 			
