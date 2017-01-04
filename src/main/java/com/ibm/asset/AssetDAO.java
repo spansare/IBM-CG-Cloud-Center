@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.ibm.util.DbUtil;
@@ -28,18 +29,22 @@ public class AssetDAO {
             ResultSet rs = (ResultSet) preparedStatement.executeQuery();
             
             while (rs.next()) {
-            	Asset asset = new Asset();
-            	asset.setAsset_title(rs.getString("asset_title"));
-            	asset.setCategory(category);
-            	asset.setImage_url(rs.getString("image_url"));
-            	asset.setDocument_url(rs.getString("document_url"));
-            	asset.setDemo_url(rs.getString("demo_url"));
-            	asset.setLong_description(rs.getString("long_description"));
-            	asset.setShort_description(rs.getString("short_description"));
-            	asset.setOwner(rs.getString("owner"));
-            	asset.setBusiness_unit(rs.getString("business_unit"));
-            	assetList.add(asset);
-            	System.out.println("Snehal : " + rs.getString("asset_title"));
+            	ArrayList<String> categories = (ArrayList<String>) Arrays.asList(rs.getString("category").split(","));
+            	if (categories.contains(category)) {
+            		Asset asset = new Asset();
+                	asset.setAsset_title(rs.getString("asset_title"));
+                	asset.setCategory(category);
+                	asset.setImage_url(rs.getString("image_url"));
+                	asset.setDocument_url(rs.getString("document_url"));
+                	asset.setDemo_url(rs.getString("demo_url"));
+                	asset.setLong_description(rs.getString("long_description"));
+                	asset.setShort_description(rs.getString("short_description"));
+                	asset.setOwner(rs.getString("owner"));
+                	asset.setBusiness_unit(rs.getString("business_unit"));
+                	assetList.add(asset);
+                	System.out.println("Snehal : " + rs.getString("asset_title"));
+            	}
+            	
             }
         } catch (SQLException e) {
             e.printStackTrace();

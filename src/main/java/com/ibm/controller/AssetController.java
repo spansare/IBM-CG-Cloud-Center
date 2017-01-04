@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -90,7 +89,8 @@ public class AssetController {
 			Asset asset = new Asset();
 			
 			asset.setAsset_title(json.getString("name"));
-			asset.setCategory(json.getString("category"));
+			JSONArray arr = json.getJSONArray("category");
+			asset.setCategory(GenericHelper.jsonArrToString(arr));
 			asset.setShort_description(json.getString("short_description"));
 			asset.setLong_description(json.getString("long_description"));
 			asset.setImage_url(json.getString("image_url"));
