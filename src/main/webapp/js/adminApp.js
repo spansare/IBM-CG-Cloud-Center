@@ -22,6 +22,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 
 	$scope.assetAdminService = assetAdminService;  
 	$scope.categoryTypes = ["Generic" , "Industry" , "Technology"];
+	$scope.selectedCategory = "";
 	var deferred = $q.defer();
 	$scope.showCreateCategory = false;
 	$scope.showUpdateCategory = false;
