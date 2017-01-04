@@ -192,6 +192,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	$scope.showCreateAsset = false;
 	$scope.showUpdateAsset = false;
 	$scope.showDeleteAsset = false;
+	$scope.categoryTypes = ["Generic" , "Industry" , "Technology"];
 	
 	$scope.showCreateAssetForm = function() {
 		$scope.showCreateAsset = true;
