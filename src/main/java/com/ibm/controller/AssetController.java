@@ -9,11 +9,13 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.ibm.asset.Asset;
 import com.ibm.asset.AssetDAO;
+import com.ibm.util.GenericHelper;
 
 @Path("/AssetService")
 public class AssetController {
@@ -50,7 +52,8 @@ public class AssetController {
 			Asset asset = new Asset();
 			System.out.println("Create Asset Input : " + json);
 			asset.setAsset_title(json.getString("name"));
-			asset.setCategory(json.getString("category"));
+			JSONArray arr = json.getJSONArray("category");
+			asset.setCategory(GenericHelper.jsonArrToString(arr));
 			asset.setShort_description(json.getString("short_description"));
 			asset.setLong_description(json.getString("long_description"));
 			asset.setImage_url(json.getString("image_url"));
