@@ -33,6 +33,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 		url : 'api/CategoryService/getCategories'
 	}).success(function(data, status, headers, config) {
 		$scope.categoryList = data.result;
+		$scope.assetAdminService.categoryList = data.result;
 	}).error(function(data, status, headers, config) {
 		// called asynchronously if an error occurs
 	// or server returns response with an error status.
@@ -186,13 +187,13 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	$scope.categoryName = $scope.assetAdminService.getSelectedCategory();
 	
 	$scope.assetList = $scope.assetAdminService.getAssets();
+	$scope.categoryList = $scope.assetAdminService.categoryList;
 	$scope.selectedAsset = "";
 	
 	var deferred = $q.defer();
 	$scope.showCreateAsset = false;
 	$scope.showUpdateAsset = false;
 	$scope.showDeleteAsset = false;
-	$scope.categoryTypes = ["Generic" , "Industry" , "Technology"];
 	
 	$scope.showCreateAssetForm = function() {
 		$scope.showCreateAsset = true;
@@ -385,6 +386,7 @@ adminApp.service('assetAdminService', ['$http', '$q', function($http, $q) {
 	
       this.categoryName = "Live Demo with Bluemix";
       this.assetList = "";
+      this.categoryList="";
       var deferred = $q.defer();
       this.getAssetsbyCategory = function(category_input) {
     	  this.categoryName = category_input;

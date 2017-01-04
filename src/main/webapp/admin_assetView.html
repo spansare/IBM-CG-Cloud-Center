@@ -31,9 +31,12 @@
 			<div class="form-group">
 			  <label class="control-label col-sm-2" for="categoryList">Categories</label>
 			  <div class="col-sm-7">
-				<select class="selectpicker" id="selcategory" ng-model="asset.category">
-				  <option ng-repeat="categoryType in categoryTypes">{{categoryType}}</option>
+				<select multiple class="selectpicker form-control"  id="categoryList" ng-model="asset.category">
+				  <option ng-repeat="cat in categoryList" value="{{cat.category_name}}">{{cat.category_name}}</option>
 				</select>
+				<!-- <select multiple class="form-control" id="sel2" ng-model="asset.category">
+					<option ng-repeat="cat in categoryList" value="{{cat.category_name}}">{{cat.category_name}}</option>				
+				</select> -->
 			  </div>
 			</div>
 			<div class="form-group">
@@ -243,3 +246,11 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+$(document).ready(function(e) {
+  $('.selectpicker').selectpicker('refresh');
+});
+
+</script>
