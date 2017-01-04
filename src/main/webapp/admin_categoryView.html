@@ -164,7 +164,35 @@
 	<!-- BLOCKS WRAP -->
 	<div class="block-main container">
 		<div class="row">
-			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList">
+			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Generic'">
+				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
+					<img src={{category.image_url}} class="img-responsive" alt="" />
+					<div class="bs-text-down text-center hvr-outline-out tooltip_">
+						{{category.category_name}}
+						<div class="tooltiptext_">{{category.short_description}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="block-main container">
+		<div class="row">
+			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Industry'">
+				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
+					<img src={{category.image_url}} class="img-responsive" alt="" />
+					<div class="bs-text-down text-center hvr-outline-out tooltip_">
+						{{category.category_name}}
+						<div class="tooltiptext_">{{category.short_description}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="block-main container">
+		<div class="row">
+			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Technology'">
 				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
 					<img src={{category.image_url}} class="img-responsive" alt="" />
 					<div class="bs-text-down text-center hvr-outline-out tooltip_">
