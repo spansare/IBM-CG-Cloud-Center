@@ -150,11 +150,12 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 			},
 			
 			deleteCategory : function() {
+				console.log($scope.selectedCategory);
 				$http({
 	    			method : 'POST',
 	    			url : 'api/CategoryService/deleteCategory',
 	    			data : {
-	    				'name' : $scope.category.category_name
+	    				'name' : $scope.selectedCategory
 	    			}
 	    		}).success(function(data, status, headers, config) {
 	    			$scope.result = data.result;
