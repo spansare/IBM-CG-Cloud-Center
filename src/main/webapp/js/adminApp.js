@@ -122,14 +122,14 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	    		}).success(function(data, status, headers, config) {
 	    			$scope.result = data.result;
 	    			deferred.resolve(data.result);
-	    			alert("Category created successfully!!!");
+	    			alert("Category updated successfully!!!");
 	    			var url = "#adminCatalog";
 	    	    	$window.location.href = url;
 	    			
 	    		}).error(function(data, status, headers, config) {
 	    			// called asynchronously if an error occurs
 	    			// or server returns response with an error status.
-	    			alert("Failed to create Category.");
+	    			alert("Failed to update Category.");
 	    		});
 				
 				return deferred.promise;
@@ -146,6 +146,29 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	                	   return;
 	                   }
 	               })
+			},
+			
+			deleteCategory : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/CategoryService/deleteCategory',
+	    			data : {
+	    				'name' : $scope.category.category_name
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			$scope.result = data.result;
+	    			deferred.resolve(data.result);
+	    			alert("Category deleted successfully!!!");
+	    			var url = "#adminCatalog";
+	    	    	$window.location.href = url;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    			alert("Failed to delete Category.");
+	    		});
+				
+				return deferred.promise;
 			}
 			
 	}
