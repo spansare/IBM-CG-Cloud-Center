@@ -29,7 +29,8 @@ public class AssetDAO {
             ResultSet rs = (ResultSet) preparedStatement.executeQuery();
             
             while (rs.next()) {
-            	ArrayList<String> categories = (ArrayList<String>) Arrays.asList(rs.getString("category").split(","));
+            	List<String> categories = Arrays.asList(rs.getString("category").split(","));
+            	
             	if (categories.contains(category)) {
             		Asset asset = new Asset();
                 	asset.setAsset_title(rs.getString("asset_title"));
