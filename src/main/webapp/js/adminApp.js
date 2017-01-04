@@ -238,7 +238,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	    			url : 'api/AssetService/createAsset',
 	    			data : {
 	    				'name' : $scope.asset.name,
-	    				'category' : $scope.category,
+	    				'category' : $scope.asset.category,
 	    				'short_description' : $scope.asset.short_description,
 	    				'long_description' : $scope.asset.long_description,
 	    				'owner' : $scope.asset.owner,

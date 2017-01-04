@@ -48,7 +48,7 @@ public class AssetController {
 			JSONObject json = new JSONObject(input);
 			AssetDAO assetDao = new AssetDAO();
 			Asset asset = new Asset();
-			
+			System.out.println("Create Asset Input : " + json);
 			asset.setAsset_title(json.getString("name"));
 			asset.setCategory(json.getString("category"));
 			asset.setShort_description(json.getString("short_description"));
