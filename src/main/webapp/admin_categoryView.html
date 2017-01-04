@@ -101,7 +101,7 @@
 			<h2>Select Category</h2>
 			<div class="form-group">
 			  <div class="col-sm-offset-3 col-sm-7" ng-repeat="u_category in categoryList">
-				<div class="radio">
+				<div class="radio" style="text-align:left;">
 				  <label><input type="radio" name="selectedCategory"  ng-model="$parent.selectedCategory" value="{{u_category.category_name}}">{{u_category.category_name}}</label>
 				</div>
 			  </div>

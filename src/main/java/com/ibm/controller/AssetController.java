@@ -123,6 +123,8 @@ public class AssetController {
 			AssetDAO assetDao = new AssetDAO();
 			String asset_title = json.getString("name");
 			
+			System.out.println("Asset to be deleted : " + asset_title);
+			
 			boolean res = assetDao.deleteAsset(asset_title);
 			
 			if(res)

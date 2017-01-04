@@ -186,6 +186,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	$scope.categoryName = $scope.assetAdminService.getSelectedCategory();
 	
 	$scope.assetList = $scope.assetAdminService.getAssets();
+	$scope.selectedAsset = "";
 	
 	var deferred = $q.defer();
 	$scope.showCreateAsset = false;
@@ -304,6 +305,28 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	                	   return;
 	                   }
 	               })
+			},
+			
+			deleteAsset : function() {
+				$http({
+	    			method : 'POST',
+	    			url : 'api/AssetService/deleteAsset',
+	    			data : {
+	    				'name' : $scope.selectedAsset
+	    			}
+	    		}).success(function(data, status, headers, config) {
+	    			deferred.resolve(data.result);
+	    			alert("Asset deleted successfully!!!");
+	    			var url = "#getAdminAssets";
+	    	    	$window.location.href = url;
+	    			
+	    		}).error(function(data, status, headers, config) {
+	    			// called asynchronously if an error occurs
+	    			// or server returns response with an error status.
+	    			alert("Failed to delete Asset.");
+	    		});
+				
+				return deferred.promise;
 			}
 	}
 	
