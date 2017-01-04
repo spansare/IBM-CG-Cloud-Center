@@ -27,8 +27,8 @@ public class DbUtil {
             System.out.println("Connecting....");
 
             VCAPUtils mydb = new VCAPUtils();
-            //connection = DriverManager.getConnection(mydb.getDBUrl(),mydb.getDBUser(),mydb.getDBPassword());
-            connection = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_6bca05beb542155?user=b6060febd5eb31&password=55d75af9","b6060febd5eb31","55d75af9");
+            connection = DriverManager.getConnection(mydb.getDBUrl(),mydb.getDBUser(),mydb.getDBPassword());
+            //connection = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_6bca05beb542155?user=b6060febd5eb31&password=55d75af9","b6060febd5eb31","55d75af9");
  
             System.out.println("--- DB Connection is successfull............");
         } catch (ClassNotFoundException e) {
