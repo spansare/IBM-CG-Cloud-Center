@@ -284,7 +284,13 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 /* For IE7. Move this to separate file when you notice some problems */
 .row, .clearfix {zoom: 1;}
 img, object, embed {max-width:100%;}
-img {height:auto;}
+img {
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:auto;
+	margin-bottom:auto
+}
 
 
 
