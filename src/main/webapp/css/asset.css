@@ -351,7 +351,8 @@ h2 {
     font-size: 27px;
     font-weight: normal;
     font-style: normal;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
+    padding-top: 20px;
 }
 
 h4 {

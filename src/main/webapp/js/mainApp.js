@@ -55,6 +55,9 @@ mainApp.controller('assetController', ['$rootScope', '$scope', '$http', 'assetSe
 	$scope.categoryName = $scope.assetService.getSelectedCategory();
 	
 	$scope.assetList = $scope.assetService.getAssets();
+	
+	$('#backtotop').click();
+	$('.backtotop').click();
     
 }]);
 

@@ -13,7 +13,7 @@ $(document).ready(function () {
     $('#backtotop').on("click", function () {
         $('body,html').animate({
             scrollTop: 0
-        }, 2000);
+        }, 1000);
         return false;
     });
     
