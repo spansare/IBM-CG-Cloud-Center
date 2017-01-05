@@ -3,7 +3,7 @@
 		<button id="homeBtn" class="btn btn-primary headerBtnLeft">Home</button>
 	</div>
 	<div class="pull-center">
-		<h3 style="text-align:center;padding-top:6px;color:#152935;">{{categoryName}}</h3>
+		<h3 style="text-align:center;padding-top:12px;color:#152935;">{{categoryName}}</h3>
 	</div>
 	<div class="pull-right">
 		<button id="loginBtn" class="btn btn-primary headerBtn" style="margin-top:-26px;">Login</button>
@@ -46,26 +46,36 @@
 					</div>
 				</div>
 				<br>
-				<!-- <div class="works-and-methods-wrapper">
+				<div class="works-and-methods-wrapper">
 					<div
 						class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
 						<div class="wm-title" style="transform: translate(0px, 0px);">
-							<h5>
-								Classic<br> Artistic<br> Expressions
-							</h5>
+							<h5>Owner</h5>
 						</div>
 					</div>
 					<div
 						class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
 						<div class="wm-content" style="transform: translate(0px, 0px);">
 							
-							<p>
-								The most recent addition to Rytter &amp; Rytter’s field of
-								expertise is interactive<br> arts in cyberspace.
-							</p>
+							<p>{{asset.owner}}</p>
 						</div>
 					</div>
-				</div> -->
+				</div>
+				<div class="works-and-methods-wrapper">
+					<div
+						class="column4 alpha omega relative vmid txtcenter td border-blue-right float-none overflow-hidden wm-title-wrapper">
+						<div class="wm-title" style="transform: translate(0px, 0px);">
+							<h5>Business Unit</h5>
+						</div>
+					</div>
+					<div
+						class="column6 relative table vmid td padding-left-30 overflow-hidden special-column">
+						<div class="wm-content" style="transform: translate(0px, 0px);">
+							
+							<p>{{asset.business_unit}}</p>
+						</div>
+					</div>
+				</div>
 				<p></p>
 				<div class="details-btmLinks">
 					<a href={{asset.document_url}} target="_blank" class="ng-scope">Document</a>

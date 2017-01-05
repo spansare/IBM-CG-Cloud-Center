@@ -3,6 +3,8 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
     margin:0 auto;
     position:relative;
     width:1140px;
+    padding-top:10px;
+    box-shadow: 5px 5px 5px 5px navy;
 }
 .row {margin-bottom:20px;}
 .columnspecial, .column1, .column2, .column3, .column4, .column5, .column6, .column7, .column8, .column9, .column10, .column11, .column12, .column13, .column14, .column15, .column16 {
