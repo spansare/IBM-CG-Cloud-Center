@@ -2,7 +2,7 @@
 	<button id="loginBtn" class="btn btn-primary headerBtn">Login</button>
 </div>
 <div class="body">
-	<div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
+	<div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 275px; overflow: hidden;">
 	
 	<!-- Loading Screen -->
 		<div u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -76,7 +76,7 @@
 	
 	<div class="block-main container">
 		<div class="row">
-			<div class="col-md-3 col-sm-3" ng-repeat="category in categoryList | filter : 'Technology'">
+			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Technology'">
 				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
 					<img src={{category.image_url}} class="img-responsive" alt="" />
 					<div class="bs-text-down text-center hvr-outline-out tooltip_">
