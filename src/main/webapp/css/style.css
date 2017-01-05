@@ -246,7 +246,7 @@ header {
 .block-content img {
     opacity: 1;
     transition: 0.3s;
-	height:350px;
+	height:300px;
 }
 
 .block-content:hover {
