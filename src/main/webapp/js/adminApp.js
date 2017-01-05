@@ -53,6 +53,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	
 	$scope.showAddCategoryForm = function() {
 		$scope.showCreateCategory = true;
+		$('#backtotop').click();
 	}
 	
 	$scope.hideAddCategoryForm = function() {
@@ -61,6 +62,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	
 	$scope.showUpdateCategoryForm = function() {
 		$scope.showUpdateCategory = true;
+		$('#backtotop').click();
 	}
 	
 	$scope.hideUpdateCategoryForm = function() {
@@ -69,6 +71,7 @@ adminApp.controller('categoryAdminController', ['$rootScope', '$scope', '$http',
 	
 	$scope.showDeleteCategoryForm = function() {
 		$scope.showDeleteCategory = true;
+		$('#backtotop').click();
 	}
 	
 	$scope.hideDeleteCategoryForm = function() {
@@ -195,8 +198,11 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	$scope.showUpdateAsset = false;
 	$scope.showDeleteAsset = false;
 	
+	$('#backtotop').click();
+	
 	$scope.showCreateAssetForm = function() {
 		$scope.showCreateAsset = true;
+		$('#backtotop').click();
 	}
 	
 	$scope.hideCreateAssetForm = function() {
@@ -205,6 +211,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	
 	$scope.showUpdateAssetForm = function() {
 		$scope.showUpdateAsset = true;
+		$('#backtotop').click();
 	}
 	
 	$scope.hideUpdateAssetForm = function() {
@@ -213,6 +220,7 @@ adminApp.controller('assetAdminController', ['$rootScope', '$scope', '$http', '$
 	
 	$scope.showDeleteAssetForm = function() {
 		$scope.showDeleteAsset = true;
+		$('#backtotop').click();
 	}
 	
 	$scope.hideDeleteAssetForm = function() {
