@@ -137,9 +137,6 @@
 			<img u="image" style="max-height: 100%; max-width: 100%;" src2="images/slider/2.jpg" />
 		</div>
 		<div>
-			<img u="image" style="max-height: 100%; max-width: 100%;" src2="images/slider/3.jpg" />
-		</div>
-		<div>
 			<img u="image" style="max-height: 100%; max-width: 100%;" src2="images/slider/4.jpg" />
 		</div>
 	</div>
@@ -163,7 +160,7 @@
 
 	<!-- BLOCKS WRAP -->
 	<div class="block-main container">
-		<div class="row">
+		<div class="row" style="margin:2px;">
 			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Generic'">
 				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
 					<img src={{category.image_url}} class="img-responsive" alt="" />
@@ -175,9 +172,9 @@
 			</div>
 		</div>
 	</div>
-	
+	<br>
 	<div class="block-main container">
-		<div class="row">
+		<div class="row" style="margin:2px;">
 			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Industry'">
 				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
 					<img src={{category.image_url}} class="img-responsive" alt="" />
@@ -189,9 +186,9 @@
 			</div>
 		</div>
 	</div>
-	
+	<br>
 	<div class="block-main container">
-		<div class="row">
+		<div class="row" style="margin:2px;">
 			<div class="col-md-4 col-sm-3" ng-repeat="category in categoryList | filter : 'Technology'">
 				<div class="block-content" ng-click="getAssetsbyCategory(category.category_name)">
 					<img src={{category.image_url}} class="img-responsive" alt="" />
