@@ -1,4 +1,4 @@
-var adminApp = angular.module('adminApp', ['ngRoute']);
+var adminApp = angular.module('adminApp', ['ngRoute', 'ngSanitize']);
 
 adminApp.config(['$routeProvider', function($routeProvider) {
 	   $routeProvider.
