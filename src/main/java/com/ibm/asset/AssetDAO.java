@@ -25,7 +25,6 @@ public class AssetDAO {
 		System.out.println("Snehal : " + category);
 		try {
             preparedStatement = (PreparedStatement) connection.prepareStatement("select * from " + tableName);
-            preparedStatement.setString(1, category);
             ResultSet rs = (ResultSet) preparedStatement.executeQuery();
             
             while (rs.next()) {
