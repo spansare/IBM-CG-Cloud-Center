@@ -113,39 +113,39 @@
 			<div class="login-stage hidden-ph" style="height:92vh;">
 				<div class="login-welcome" id="login-welcome-1" style="display:none;">
 					<a href="https://bluemix.net" target="_blank">
-						<span class="login-heading">In The News: Global Custodian - Scaling Forward</span>
-						<span class="login-sub-heading">Fund administrators need scale to help hedge funds through a tough period.</span>
+						<span class="login-heading">Capgemini and IBM</span>
+						<span class="login-sub-heading">your partners for a new generation of doing business: The Global Alliance between Capgemini and IBM in place since 2001 is focused on helping clients meet increasingly specific business needs</span>
 					</a>
 
 				</div>
 				<div class="login-welcome" id="login-welcome-2" style="display:none;">
 					<a href="https://bluemix.net" target="_blank">
-						<span class="login-heading">In The News: PEI - The Fund Administration & Technology Special 2016</span>
-						<span class="login-sub-heading">Todayâ€™s fund administrators can play a vital role as GPs move into new geographies, new asset classes and larger funds under the watchful eye of regulators around the world.</span>
+						<span class="login-heading">Capgemini and IBM</span>
+						<span class="login-sub-heading">Business insights and delivery expertise from Capgemini combine with leading edge IBM technology to create high value solutions, designed to foster innovation, growth and profitability.</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-3" style="display:none;">
 					<a href="https://bluemix.net" target="_blank">
-						<span class="login-heading">Strategies For Competing in the Digital Age</span>
-						<span class="login-sub-heading">Digitalization is changing the rules for asset management.</span>
+						<span class="login-heading">Capgemini and IBM</span>
+						<span class="login-sub-heading">your partners for a new generation of doing business: The Global Alliance between Capgemini and IBM in place since 2001 is focused on helping clients meet increasingly specific business needs</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-4" style="display:none;">
 					<a href="https://bluemix.net" target="_blank">
-						<span class="login-heading">CRM II: Finding a Flexible Solution in the Compliance Era</span>
-						<span class="login-sub-heading">In light of forthcoming changes from CRM II, consider rethinking your compliance strategy as an opportunity for operational enhancement.</span>
+						<span class="login-heading">Capgemini and IBM</span>
+						<span class="login-sub-heading">Business insights and delivery expertise from Capgemini combine with leading edge IBM technology to create high value solutions, designed to foster innovation, growth and profitability.</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-5" style="display:none;">
 					<a href="https://bluemix.net" target="_blank">
-						<span class="login-heading">Performance Best Practices: Achieving Transparency Across the Stakeholder Spectrum</span>
-						<span class="login-sub-heading">Performance Measurement has become a key priority for asset management firms.</span>
+						<span class="login-heading">Capgemini and IBM</span>
+						<span class="login-sub-heading">your partners for a new generation of doing business: The Global Alliance between Capgemini and IBM in place since 2001 is focused on helping clients meet increasingly specific business needs</span>
 					</a>
 				</div>
 				<div class="login-welcome" id="login-welcome-6" style="display:none;">
 					<a href="https://bluemix.net" target="_blank">
-						<span class="login-heading">The Future Of Fund Administration Is Here</span>
-						<span class="login-sub-heading">Watch the video.</span>
+						<span class="login-heading">Capgemini and IBM</span>
+						<span class="login-sub-heading">Business insights and delivery expertise from Capgemini combine with leading edge IBM technology to create high value solutions, designed to foster innovation, growth and profitability.</span>
 					</a>
 				</div>
 			</div>
