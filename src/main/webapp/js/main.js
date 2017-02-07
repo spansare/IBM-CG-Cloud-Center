@@ -24,7 +24,7 @@ $(document).ready(function () {
 		 window.location.href='index.html';
 	});
 	$('body').on('click', '#loginOutBtn', function () {
-		 window.location.href='index.html';
+		 window.location.href='login.jsp';
 	});
 	$('body').on('click', '#adminHomeBtn', function () {
 		 window.location.href='admin.jsp';
