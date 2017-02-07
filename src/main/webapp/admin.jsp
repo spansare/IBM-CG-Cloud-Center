@@ -99,6 +99,9 @@
 				<div class="tb_left pull-left">
 					<h1 class="headerLogoText">IBM Capgemini Cloud Center</h1>
 				</div>
+				<div class="tb_right pull-right">
+					<button id="loginOutBtn" class="btn btn-primary headerBtn">Logout</button>
+				</div>
             </div>
         </nav>
 		
