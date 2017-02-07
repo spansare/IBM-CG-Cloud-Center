@@ -104,9 +104,9 @@
 				<div class="tb_left pull-left">
 					<h1 class="headerLogoText" style="margin-top:0px;">IBM Capgemini Cloud Center</h1>
 				</div>
-				<div class="tb_right pull-right">
+				<!-- <div class="tb_right pull-right">
 					<button id="homeBtn" class="btn btn-primary headerBtnLogin">Home</button>
-				</div>
+				</div> -->
             </div>
         </nav>
 		<div class="login-screen">
