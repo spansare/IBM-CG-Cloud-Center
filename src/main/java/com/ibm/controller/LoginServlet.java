@@ -42,8 +42,16 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("username", user.getUsername());
 					
 					response.setContentType("text/html"); 
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.jsp");
-			        dispatcher.forward(request, response); 
+					if ( user.getUsername().equalsIgnoreCase("admin")) {
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/admin.jsp");
+						dispatcher.forward(request, response);
+					}						
+					else {
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/index.html");
+						dispatcher.forward(request, response);
+					}
+						
+			         
 				} else {
 					response.setContentType("text/html"); 
 					request.setAttribute("errorMsg", "Invalid Password");
