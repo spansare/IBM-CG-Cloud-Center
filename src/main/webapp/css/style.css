@@ -305,13 +305,6 @@ header {
     font-weight: 400;
 }
 
-.block-content:hover .bs-text-down:before {
-    top: -7px;
-    right: -7px;
-    bottom: -7px;
-    left: -7px;
-}
-
 .bs-text-center {
     background: #fff;
     background: rgba(255,255,255,0.9);
@@ -350,12 +343,7 @@ header {
     transition-property: top, right, bottom, left;
 }
 
-.block-content:hover .bs-text-center:before {
-    top: -7px;
-    right: -7px;
-    bottom: -7px;
-    left: -7px;
-}
+
 
 .bs-text-center span {
     text-transform: none;
