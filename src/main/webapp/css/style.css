@@ -253,10 +253,6 @@ header {
 	height:300px;
 }
 
-.block-content:hover {
-    box-shadow: 0 5px 10px 0 rgba(0,0,128,0.24);
-    border: 0px;
-}
 
 .block-content:hover img {
     opacity: 0.8;
