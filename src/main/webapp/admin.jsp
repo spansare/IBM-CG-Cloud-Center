@@ -90,20 +90,7 @@
 	<body class="" ng-app="adminApp" >
         <!-- PRELOADER -->
         <div id="loader" style="display: none;"></div>
-        <!-- HEADER -->
-        <nav class="navbar navbar-fixed-top">
-            <div class="headerClass">
-                <div class="tb_left pull-left">
-                	<img class="topBarLogoImg" src="images/IBM_Bluemix_logo.png" />
-				</div>
-				<div class="tb_left pull-left">
-					<h1 class="headerLogoText">IBM Capgemini Cloud Center</h1>
-				</div>
-				<div class="tb_right pull-right">
-					<button id="loginOutBtn" class="btn btn-primary headerBtn">Logout</button>
-				</div>
-            </div>
-        </nav>
+        
 		
         <div ng-view></div>
                 
