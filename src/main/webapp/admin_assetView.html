@@ -16,27 +16,25 @@
 	</div>
 </nav>
 
-<div class="top-head-h3">
-	<div class="pull-left">
-		<button id="adminHomeBtn" class="btn btn-primary headerBtnLeft pull-left">Home</button>
-	</div>
-	<div class="pull-center">
-		<h3 style="text-align:center;padding-top:12px;color:#152935;">{{categoryName}}</h3>
-	</div>
-	<!-- <div class="pull-right">
-		<button id="loginOutBtn" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Logout</button>
-	</div> -->
-	<div class="pull-right">
-		<button id="deleteAssetBtn" ng-click="showDeleteAssetForm()" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Delete Asset</button>
-	</div>
-	<div class="pull-right">
-		<button id="updateAssetBtn" ng-click="showUpdateAssetForm()" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Update Asset</button>
-	</div>
-	<div class="pull-right">
-		<button id="createAssetBtn" ng-click="showCreateAssetForm()" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Add Asset</button>
-	</div>
-</div>
+
 <div class="body">
+	<div class="top-head-h3">
+		<div class="pull-center">
+			<h3 style="text-align:center;padding-top:12px;color:#152935;">{{categoryName}}</h3>
+		</div>
+		<!-- <div class="pull-right">
+			<button id="loginOutBtn" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Logout</button>
+		</div> -->
+		<div class="pull-right">
+			<button id="deleteAssetBtn" ng-click="showDeleteAssetForm()" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Delete Asset</button>
+		</div>
+		<div class="pull-right">
+			<button id="updateAssetBtn" ng-click="showUpdateAssetForm()" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Update Asset</button>
+		</div>
+		<div class="pull-right">
+			<button id="createAssetBtn" ng-click="showCreateAssetForm()" class="btn btn-primary headerBtn pull-right" style="margin-top:-26px;">Add Asset</button>
+		</div>
+	</div>
 	<div id="assetcontainer" style="height: 600px;" ng-show="showCreateAsset">
 		<form class="form-horizontal">
 			<h2>Enter  Asset Details</h2>
