@@ -29,8 +29,9 @@ public class CategoryController {
 		String result = new String();
 		JSONObject categoryJson = new JSONObject();
 		CategoryDAO catDao = new CategoryDAO();
-		List<Category> categories = catDao.getAllCategories();
-		categoryJson = categoryJson.put("result", categories);
+//		List<Category> categories = catDao.getAllCategories();
+//		categoryJson = categoryJson.put("result", categories);
+		categoryJson = catDao.getAllCategories();
 		result = categoryJson.toString();
 		System.out.println("Result : " + result);
         return result;

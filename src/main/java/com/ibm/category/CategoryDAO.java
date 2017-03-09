@@ -23,7 +23,7 @@ public class CategoryDAO {
 		connection = DbUtil.getConnection();
 	}
 	
-	public List<Category> getAllCategories() {
+	public JSONObject getAllCategories() {
 		List<Category> categoryList = new ArrayList<Category>();
 		JSONObject json = new JSONObject();
 		ResultSet rs = null;
@@ -66,7 +66,8 @@ public class CategoryDAO {
 	    }
 		System.out.println("Result  : getAllCategories" + categoryList);
 		System.out.println("Result  : json" + json);
-		return categoryList;
+		//return categoryList;
+		return json;
 		
 	}
 	
