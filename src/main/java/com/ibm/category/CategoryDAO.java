@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ibm.user.User;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.ibm.util.DbUtil;
 
 public class CategoryDAO {
@@ -22,10 +25,12 @@ public class CategoryDAO {
 	
 	public List<Category> getAllCategories() {
 		List<Category> categoryList = new ArrayList<Category>();
+		JSONObject json = new JSONObject();
+		ResultSet rs = null;
 		
 		try {
             preparedStatement = (PreparedStatement) connection.prepareStatement("select * from "+tableName);
-            ResultSet rs = (ResultSet) preparedStatement.executeQuery();
+            rs = (ResultSet) preparedStatement.executeQuery();
 
             while (rs.next()) {
             	Category category = new Category();
@@ -35,9 +40,18 @@ public class CategoryDAO {
             	category.setShort_description(rs.getString("short_description"));
             	category.setCategory_type(rs.getString("category_type"));
             	categoryList.add(category);
+            	JSONArray arr = json.optJSONArray(rs.getString("category_type"));
+            	if(arr != null) {
+            		arr.put(category);
+            		System.out.println(arr.toString());
+            	} else {
+            		arr = new JSONArray();
+            		arr.put(category);
+            		json.put(rs.getString("category_type"), arr);
+            	}
             	System.out.println("Result  : getAllCategories" + rs.getString("category_name"));
             }
-        } catch (SQLException e) {
+        } catch (SQLException | JSONException e) {
             e.printStackTrace();
         }
         finally {
@@ -50,6 +64,8 @@ public class CategoryDAO {
 				}
 	        }
 	    }
+		System.out.println("Result  : getAllCategories" + categoryList);
+		System.out.println("Result  : json" + json);
 		return categoryList;
 		
 	}
